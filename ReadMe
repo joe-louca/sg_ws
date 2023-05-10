@@ -1,0 +1,22 @@
+# First, setup the bluetooth connections to sensegloves
+connect_sg
+(disconnect_sg when finished)
+
+
+# Then, setup senseglove connections using sensecom program
+cd sg_ws/SenseCom
+./SenseCom.x86_64
+
+
+# Now you're ready to run custom senseglove applications
+cd sg_ws/sg_run
+cmake .
+make
+./main
+
+
+# Use this with MuJoCo
+rosrun mujoco_menagerie sg_control_robotiq.py
+
+
+

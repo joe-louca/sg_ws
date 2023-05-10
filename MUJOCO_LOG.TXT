@@ -1,0 +1,9 @@
+Tue May  9 12:26:27 2023
+WARNING: mju_openResource: unknown file 'robotiq_2f85/scene.xml'
+
+Tue May  9 12:27:06 2023
+WARNING: mju_openResource: unknown file '~/sg_ws/src/mujoco_menagerie/robotiq_2f85/scene.xml'
+
+Tue May  9 12:27:19 2023
+WARNING: mju_openResource: unknown file '/home/joe/src/mujoco_menagerie/robotiq_2f85/scene.xml'
+

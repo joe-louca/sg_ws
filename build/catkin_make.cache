@@ -1,0 +1,2 @@
+mujoco_menagerie
+-DCATKIN_DEVEL_PREFIX=/home/joe/sg_ws/devel -DCMAKE_INSTALL_PREFIX=/home/joe/sg_ws/install -G Unix Makefiles
