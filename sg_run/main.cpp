@@ -26,24 +26,25 @@ class listener
   	{
      	public:
 			std::vector<float> fingercontact_msg;
-			float left_buzz;
-			float left_force;
-			float right_buzz;
-			float right_force;
-			float msg_time;
-			bool msg_received;
+			float TH_buzz, F1_buzz, F2_buzz, F3_buzz, F4_buzz, TH_force, F1_force, F2_force, F3_force, F4_force, msg_time;
+			bool msg_received = false;
 			void Contacts_Callback(const std_msgs::Float32MultiArray::ConstPtr& msg);
    	};
 
 	void listener::Contacts_Callback(const std_msgs::Float32MultiArray::ConstPtr& msg)
     {
 		const std_msgs::Float32MultiArray* data = msg.get();
-		//listener::fingercontact_msg = data->data;
-		listener::left_buzz = data->data[1];
-		listener::left_force = data->data[1];
-		listener::right_buzz = data->data[2];
-		listener::right_force = data->data[3];
-		listener::msg_time = data->data[4];
+		listener::TH_buzz = data->data[0];
+		listener::F1_buzz = data->data[1];
+		listener::F2_buzz = data->data[2];
+		listener::F3_buzz = data->data[3];
+		listener::F4_buzz = data->data[4];		
+		listener::TH_force = data->data[5];
+		listener::F1_force = data->data[6];
+		listener::F2_force = data->data[7];
+		listener::F3_force = data->data[8];
+		listener::F4_force = data->data[9];
+		listener::msg_time = data->data[10];
 		listener::msg_received = true;
     }
 
@@ -403,16 +404,11 @@ int main(int argc, char* argv[])
 				// Subscribe to sensor readings for each finger and apply feedback
 				if (list.msg_received)
 				{
-					if (list.left_buzz > 0.00005) {f0_vib = 50; f0_force=100;} 
-					else {f0_vib = 0; f0_force = 0;} 
-					if (list.right_buzz > 0.00005) {f1_vib = 50; f1_force = 100;} 
-					else {f1_vib = 0; f1_force = 0;} 
-
 					//Force-Feedback Command
-					//glove->SendHaptics(SGCore::Haptics::SG_FFBCmd(f0_force, f1_force, 0, 0, 0) );
+					glove->SendHaptics(SGCore::Haptics::SG_FFBCmd(list.TH_force, list.F1_force, list.F2_force, list.F3_force, 0) );
 					
 					//Vibro Command
-					//glove->SendHaptics(SGCore::Haptics::SG_BuzzCmd(f0_vib, f1_vib, 0, 0, 0) );
+					glove->SendHaptics(SGCore::Haptics::SG_BuzzCmd(list.TH_buzz, list.F1_buzz, list.F2_buzz, list.F3_buzz, 0) );
 
 					//list.msg_received = false;
 				}
