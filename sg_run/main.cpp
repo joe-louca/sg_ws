@@ -57,11 +57,11 @@ void Publish_TPdist(double dist, ros::Publisher ros_pub)
 void Publish_A(float* angles, ros::Publisher ros_pub)
 {
 	std_msgs::Float32MultiArray angles_msg;
-
+	//rad2deg = 180.0/M_PI;
 	angles_msg.data.clear();
-	for (int i = 1; i<17; i++)
+	for (int i = 0; i<17; i++)
 	{
-		angles_msg.data.push_back( angles[i]*(180.0/3.141592653589793238463) );
+		angles_msg.data.push_back( angles[i] );
 	}
 
 	//angles_msg.data = angles;
@@ -367,14 +367,17 @@ int main(int argc, char* argv[])
 					jointAs[2] = handPose.handAngles[0][0].y;
 					jointAs[3] = handPose.handAngles[0][1].y;
 					jointAs[4] = handPose.handAngles[0][2].y;
+
 					jointAs[5] = handPose.handAngles[1][0].z;
 					jointAs[6] = handPose.handAngles[1][0].y;
 					jointAs[7] = handPose.handAngles[1][1].y;
 					jointAs[8] = handPose.handAngles[1][2].y;
+
 					jointAs[9] = handPose.handAngles[2][0].z;
 					jointAs[10] = handPose.handAngles[2][0].y;
 					jointAs[11] = handPose.handAngles[2][1].y;
 					jointAs[12] = handPose.handAngles[2][2].y;
+
 					jointAs[13] = handPose.handAngles[3][0].z;
 					jointAs[14] = handPose.handAngles[3][0].y;
 					jointAs[15] = handPose.handAngles[3][1].y;
@@ -400,40 +403,16 @@ int main(int argc, char* argv[])
 				// Subscribe to sensor readings for each finger and apply feedback
 				if (list.msg_received)
 				{
-					// std::cout<<list.fingercontact_msg<<std::endl;
-					// left_buzz = list.fingercontact_msg[0];
-					// left_force = list.fingercontact_msg[1];
-					// right_buzz = list.fingercontact_msg[2];
-					// right_force = list.fingercontact_msg[3];
-					// std::cout<<"got here"<<std::endl;
-					// std::cout<<left_buzz<<std::endl;
-					// std::cout<<right_buzz<<std::endl;
 					if (list.left_buzz > 0.00005) {f0_vib = 50; f0_force=100;} 
 					else {f0_vib = 0; f0_force = 0;} 
 					if (list.right_buzz > 0.00005) {f1_vib = 50; f1_force = 100;} 
 					else {f1_vib = 0; f1_force = 0;} 
 
-					//list.msg_time;
-					// if (frame % 300 < 150)
-					// {f0_vib = 0;
-					// f1_vib = 0;
-					// f1_force = 100;}
-					// else					
-					// {f0_vib = 100;
-					// f1_vib = 0;
-					// f1_force = 0;}
-
-					// f0_force = 0;//frame*0.001;//cos(frame/100);
-					//f0_vib = (frame % 2);
-					//f1_force = 0;//cos(frame/100);
-					//f1_vib = sin(frame/1000)*100;
-
-					//glove->StopHaptics();
 					//Force-Feedback Command
-					glove->SendHaptics(SGCore::Haptics::SG_FFBCmd(f0_force, f1_force, 0, 0, 0) );
+					//glove->SendHaptics(SGCore::Haptics::SG_FFBCmd(f0_force, f1_force, 0, 0, 0) );
 					
 					//Vibro Command
-					glove->SendHaptics(SGCore::Haptics::SG_BuzzCmd(f0_vib, f1_vib, 0, 0, 0) );
+					//glove->SendHaptics(SGCore::Haptics::SG_BuzzCmd(f0_vib, f1_vib, 0, 0, 0) );
 
 					//list.msg_received = false;
 				}
