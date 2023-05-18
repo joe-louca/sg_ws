@@ -131,7 +131,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/joe/sg_ws/build/gtest/cmake_install.cmake")
+  include("/home/joe/sg_ws/build/delay/cmake_install.cmake")
   include("/home/joe/sg_ws/build/mujoco_menagerie/cmake_install.cmake")
+  include("/home/joe/sg_ws/build/launch/cmake_install.cmake")
+  include("/home/joe/sg_ws/build/polaris/cmake_install.cmake")
+  include("/home/joe/sg_ws/build/senseglove/cmake_install.cmake")
 
 endif()
 

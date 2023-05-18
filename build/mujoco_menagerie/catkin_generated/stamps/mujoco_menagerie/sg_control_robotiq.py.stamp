@@ -21,14 +21,14 @@ class SG_CONTROL:
         rospy.init_node('sg_MJC_controller', anonymous=True)
         t0 = rospy.get_time()
         pub = rospy.Publisher('/FingerContacts', Float32MultiArray, queue_size=1)
-        sub = rospy.Subscriber('/TP_distance', Float32, self.callback, queue_size=1)
+        sub = rospy.Subscriber('/Delayed_TPDistance', Float32, self.callback, queue_size=1)
         rate_hz = 200
         r = rospy.Rate(rate_hz)
 
         contact_msg = Float32MultiArray()
         self.grip_cmd_ = False
 
-        sg_max_distance = 10
+        sg_max_distance = 100
 
         #model = mujoco.MjModel.from_xml_path('shadow_hand/scene_left.xml')
         model = mujoco.MjModel.from_xml_path(path_to_models + 'robotiq_2f85/scene.xml')
@@ -36,7 +36,11 @@ class SG_CONTROL:
 
         # create the viewer object
         viewer = mujoco_viewer.MujocoViewer(model, data, hide_menus=False)
-
+        viewer.cam.distance = 1.35
+        viewer.cam.elevation = -30
+        viewer.cam.azimuth = +60
+        viewer._paused = True
+        
         # simulate and render
         frm = 0
         while not rospy.is_shutdown():
@@ -48,20 +52,20 @@ class SG_CONTROL:
 
             # Read contacts
             #geom ids: left pad = 13, right_pad = 25, box = 29
-            contact_msg.data = [0, 0, 0, 0, 0]
+            contact_msg.data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             for i in range(data.ncon):
                 contact = data.contact[i]
                 dist = contact.dist         # -ve values are penetration
                 friction = contact.friction # 5x1 (tangent1, 2, spin, roll1, 2)
-                if dist < 0:
+                if dist < -0.00001:
                     if contact.geom1 == 13:
-                        contact_msg.data[0] = -dist
-                        contact_msg.data[1] = -dist
+                        contact_msg.data[0] = 100
+                        contact_msg.data[5] = 100
                     elif contact.geom1 == 25:
-                        contact_msg.data[2] = -dist
-                        contact_msg.data[3] = -dist
+                        contact_msg.data[1] = 100
+                        contact_msg.data[6] = 100
 
-            contact_msg.data[4] = rospy.get_time() - t0
+            contact_msg.data[10] = rospy.get_time() - t0
             pub.publish(contact_msg)        # [Left Buzz, Left Force, Right Buzz, Right Force, Time]
             
             if viewer.is_alive:

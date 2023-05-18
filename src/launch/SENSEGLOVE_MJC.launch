@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="sim" default="rob"/>
+	<arg name ="l" default="0"/>
+	
+	<!-- Set some parameters -->
+	<param name="latency" type="double" value="$(eval arg('l'))" />
+
+	<!-- Start up senseglove node -->
+	<node pkg="senseglove" type="senseglove_node" name="SenseGlove" output="screen"/>
+	
+	<!-- Start up MuJoCo node -->
+	<group if="$(eval sim == 'rob')">
+		<node pkg="mujoco_menagerie" type="sg_control_robotiq.py" name="MuJoCo_Robotiq" output ="screen"/>
+	</group>
+	<group if="$(eval sim == 'shad')">
+		<node pkg="mujoco_menagerie" type="sg_control_shadow.py" name="MuJoCo_Shadow" output ="screen"/>
+	</group>
+		
+	<!-- Start up nodes to subscribe and add delay -->	
+	<node pkg="delays" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	
+	<node pkg="delays" type="topic_delay.py" name="DelayTPDistance" args="TPDistance"/>	
+	<node pkg="delays" type="topic_delay.py" name="DelayFingerJointAngles" args="FingerJointAngles"/>	
+</launch>
