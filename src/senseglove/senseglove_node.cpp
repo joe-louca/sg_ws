@@ -133,7 +133,7 @@ int main(int argc, char* argv[])
 												 {F4_J0_Position_pub, F4_J1_Position_pub, F4_J2_Position_pub, F4_J3_Position_pub} };
 	
 	listener list;
-    ros::Subscriber Contact_sub = n.subscribe<std_msgs::Float32MultiArray>("/Delayed_FingerContacts", 1, &listener::Contacts_Callback, &list);
+    ros::Subscriber Contact_sub = n.subscribe<std_msgs::Float32MultiArray>("/FingerContacts", 1, &listener::Contacts_Callback, &list);
 	
 	// API can set vibration and forces at 200Hz at steps from 0-100
 	int rate_hz = 200;

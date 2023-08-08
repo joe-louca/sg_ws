@@ -48,7 +48,7 @@ class TOPIC_DELAY():
             sub = rospy.Subscriber('/'+topic_name, Float32, self.callback, queue_size=1) 
 
         # Get some parameters
-        self.latency = rospy.get_param('latency')*0.001
+        self.latency = rospy.get_param('latency')
         self.rate_hz = 200
         self.delayed_tbl = np.array([None, None])
     
@@ -59,7 +59,7 @@ class TOPIC_DELAY():
             if self.checker:
                 pub.publish(self.delayed_msg)
                 self.checker = False
-                self.latency = rospy.get_param('latency')*0.001
+                self.latency = rospy.get_param('latency')
             r.sleep()
 
 

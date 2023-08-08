@@ -6,33 +6,20 @@ with NDI Polaris, Vega, and Aurora trackers.
 """
 
 import time
+import math
 import rospy
 from sksurgerynditracker.nditracker import NDITracker
 from geometry_msgs.msg import TransformStamped
 
-def run():
-    """Demonstration program
+def angular_velocities(q1, q2, dt): 
+    # q1 = last quaternion, q2 = current quaternion.
+    # Quaternions are given as [w, x, y, z]
+    # Returns angular velocity [x, y, z] as rad/s
+    return (2 / dt) * np.array([q1[0]*q2[1] - q1[1]*q2[0] - q1[2]*q2[3] + q1[3]*q2[2],
+                                q1[0]*q2[2] + q1[1]*q2[3] - q1[2]*q2[0] - q1[3]*q2[1],
+                                q1[0]*q2[3] - q1[1]*q2[2] + q1[2]*q2[1] - q1[3]*q2[0]])
 
-    Example showing how to initialise, configure, and communicate
-    with NDI Polaris, Vega, and Aurora trackers.
-    Configuration is by python dictionaries, edit as necessary.
-
-    Dictionaries for other systems:
-
-    settings_polaris = {"tracker type": "polaris",
-    "romfiles" : ["../data/8700339.rom"]}
-
-    settings_aurora = {
-        "tracker type": "aurora",
-        "ports to probe": 2,
-        "verbose": True,
-    }
-
-    settings_dummy = {"tracker type": "dummy",}
-
-    """
-
-    
+def run():   
     rospy.init_node('sg_MJC_controller', anonymous=True)
     r = rospy.Rate(60) # Tracker collects at a constant rate of 60 Hz. This script seems to do 20Hz
     
@@ -41,7 +28,7 @@ def run():
     
     tool_names = ['Wrist']
     rom_location = '/home/joe/sg_ws/src/polaris/data/'
-    rom_files = [rom_location+'8700339.rom']
+    rom_files = [rom_location+'RightHand.rom']
     num_tools = len(rom_files)
 
     for i in range(num_tools):
@@ -52,7 +39,7 @@ def run():
     # Define settings for tracker model and tools
     # Tool description files (.rom) can be generated using NDI 6D Architect
     # For more information on tool characterization, see the “Polaris Tool Design Guide” and the “NDI 6D Architect User Guide”
-    settings_polaris = {"tracker type": "polaris", "romfiles" : [rom_location+"8700339.rom"]}
+    settings_polaris = {"tracker type": "polaris", "romfiles" : [rom_location+"RightHand.rom"]}
 
     # Initilise tracker object for communication with NDI trackers. 
     tracker = NDITracker(settings_polaris)
@@ -78,18 +65,18 @@ def run():
         port_handles, timestamps, framenumbers, trackings, qualitys = tracker.get_frame()
         for i in range(num_tools):
             tool_pos = trackings[i]
-            
-            msgs[i].header.stamp = rospy.Time.now()
-            msgs[i].header.frame_id = tool_names[i]
-            msgs[i].transform.translation.x = tool_pos[i][0]
-            msgs[i].transform.translation.y = tool_pos[i][1]
-            msgs[i].transform.translation.z = tool_pos[i][2]
-            msgs[i].transform.rotation.w = tool_pos[i][3]
-            msgs[i].transform.rotation.x = tool_pos[i][4]
-            msgs[i].transform.rotation.y = tool_pos[i][5]
-            msgs[i].transform.rotation.z = tool_pos[i][6]
+            if not math.isnan(tool_pos[i][0]):
+                msgs[i].header.stamp = rospy.Time.now()
+                msgs[i].header.frame_id = tool_names[i]
+                msgs[i].transform.translation.x = tool_pos[i][4] 
+                msgs[i].transform.translation.y = tool_pos[i][5] 
+                msgs[i].transform.translation.z = tool_pos[i][6] 
+                msgs[i].transform.rotation.w = tool_pos[i][3]
+                msgs[i].transform.rotation.x = tool_pos[i][0]
+                msgs[i].transform.rotation.y = tool_pos[i][1]
+                msgs[i].transform.rotation.z = tool_pos[i][2]
 
-            pubs[i].publish(msgs[i])
+                pubs[i].publish(msgs[i])
             
         r.sleep()
 

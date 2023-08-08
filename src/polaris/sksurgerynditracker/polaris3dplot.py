@@ -11,15 +11,29 @@ import rospy
 from sksurgerynditracker.nditracker import NDITracker
 from geometry_msgs.msg import TransformStamped
 
-def angular_velocities(q1, q2, dt): 
-    # q1 = last quaternion, q2 = current quaternion.
-    # Quaternions are given as [w, x, y, z]
-    # Returns angular velocity [x, y, z] as rad/s
-    return (2 / dt) * np.array([q1[0]*q2[1] - q1[1]*q2[0] - q1[2]*q2[3] + q1[3]*q2[2],
-                                q1[0]*q2[2] + q1[1]*q2[3] - q1[2]*q2[0] - q1[3]*q2[1],
-                                q1[0]*q2[3] - q1[1]*q2[2] + q1[2]*q2[1] - q1[3]*q2[0]])
+def run():
+    """Demonstration program
 
-def run():   
+    Example showing how to initialise, configure, and communicate
+    with NDI Polaris, Vega, and Aurora trackers.
+    Configuration is by python dictionaries, edit as necessary.
+
+    Dictionaries for other systems:
+
+    settings_polaris = {"tracker type": "polaris",
+    "romfiles" : ["../data/8700339.rom"]}
+
+    settings_aurora = {
+        "tracker type": "aurora",
+        "ports to probe": 2,
+        "verbose": True,
+    }
+
+    settings_dummy = {"tracker type": "dummy",}
+
+    """
+
+    
     rospy.init_node('sg_MJC_controller', anonymous=True)
     r = rospy.Rate(60) # Tracker collects at a constant rate of 60 Hz. This script seems to do 20Hz
     
@@ -66,15 +80,16 @@ def run():
         for i in range(num_tools):
             tool_pos = trackings[i]
             if not math.isnan(tool_pos[i][0]):
+                print(tool_pos)
                 msgs[i].header.stamp = rospy.Time.now()
                 msgs[i].header.frame_id = tool_names[i]
-                msgs[i].transform.translation.x = tool_pos[i][4] 
-                msgs[i].transform.translation.y = tool_pos[i][5] 
-                msgs[i].transform.translation.z = tool_pos[i][6] 
+                msgs[i].transform.translation.x = tool_pos[i][0]
+                msgs[i].transform.translation.y = tool_pos[i][1]
+                msgs[i].transform.translation.z = tool_pos[i][2]
                 msgs[i].transform.rotation.w = tool_pos[i][3]
-                msgs[i].transform.rotation.x = tool_pos[i][0]
-                msgs[i].transform.rotation.y = tool_pos[i][1]
-                msgs[i].transform.rotation.z = tool_pos[i][2]
+                msgs[i].transform.rotation.x = tool_pos[i][4]
+                msgs[i].transform.rotation.y = tool_pos[i][5]
+                msgs[i].transform.rotation.z = tool_pos[i][6]
 
                 pubs[i].publish(msgs[i])
             

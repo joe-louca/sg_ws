@@ -9,6 +9,9 @@
 	<!-- Start up senseglove node -->
 	<node pkg="senseglove" type="senseglove_node" name="SenseGlove" output="screen"/>
 	
+	<!-- Start up polaris node -->
+	<node pkg="polaris" type="polaris_node" name="Polaris" output="screen"/>	
+	
 	<!-- Start up MuJoCo node -->
 	<group if="$(eval sim == 'rob')">
 		<node pkg="mujoco_menagerie" type="sg_control_robotiq.py" name="MuJoCo_Robotiq" output ="screen"/>
