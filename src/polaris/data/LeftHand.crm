@@ -4,7 +4,7 @@ Classification=4
 CharMethod=0
 [Tool Parameters]
 Tool Manufacturer=Joe
-Tool Part Number=2
+Tool Part Number=3
 Revision Number=0
 Tool Type=1
 SubType=3
@@ -29,63 +29,20 @@ Max 3D Error=1.0000000
 
 --TOOL ALIGNMENT AND NORMALS ------------------------
 [XfrmsAndNorms]
-NumOperations =9
+NumOperations =2
 
 [Xfrm001]
 XfrmType	= 1
-Q0XYZ = 0.7373,0.0000,-0.6756,0.0000
+Q0XYZ = 0.9997,0.0000,0.0262,0.0000
 TXYZ = 0.0000,0.0000,0.0000
 
 [Xfrm002]
 XfrmType	= 2
-N01	= 9.5720e-001f,1.9276e-001f,2.1591e-001f
-N02	= 9.5720e-001f,1.9276e-001f,2.1591e-001f
-N03	= 9.5720e-001f,1.9276e-001f,2.1591e-001f
-N04	= 9.5720e-001f,1.9276e-001f,2.1591e-001f
-N05	= 9.5720e-001f,1.9276e-001f,2.1591e-001f
-F01	= 9.5720e-001f,1.9276e-001f,2.1591e-001f
-
-[Xfrm003]
-XfrmType	= 2
-N01	= 9.5490e-001f,1.9591e-001f,2.2313e-001f
-N02	= 9.5490e-001f,1.9591e-001f,2.2313e-001f
-N03	= 9.5490e-001f,1.9591e-001f,2.2313e-001f
-N04	= 9.5490e-001f,1.9591e-001f,2.2313e-001f
-N05	= 9.5490e-001f,1.9591e-001f,2.2313e-001f
-F01	= 9.5490e-001f,1.9591e-001f,2.2313e-001f
-
-[Xfrm004]
-XfrmType	= 1
-Q0XYZ = -0.0872,-0.0000,0.9962,-0.0000
-TXYZ = 0.0000,0.0000,0.0000
-
-[Xfrm005]
-XfrmType	= 1
-Q0XYZ = 0.0872,0.0000,0.9962,0.0000
-TXYZ = 0.0000,0.0000,0.0000
-
-[Xfrm006]
-XfrmType	= 1
-Q0XYZ = 0.9990,0.0000,-0.0436,0.0000
-TXYZ = 0.0000,0.0000,0.0000
-
-[Xfrm007]
-XfrmType	= 1
-Q0XYZ = 0.9990,0.0000,-0.0436,0.0000
-TXYZ = 0.0000,0.0000,0.0000
-
-[Xfrm008]
-XfrmType	= 1
-Q0XYZ = 0.9962,0.0000,0.0872,0.0000
-TXYZ = 0.0000,0.0000,0.0000
-
-[Xfrm009]
-XfrmType	= 2
 N01	= 0.0000e+000f,0.0000e+000f,1.0000e+000f
 N02	= 0.0000e+000f,1.0000e+000f,0.0000e+000f
 N03	= 0.0000e+000f,0.0000e+000f,1.0000e+000f
-N04	= 0.0000e+000f,0.0000e+000f,1.0000e+000f
-N05	= -7.0711e-001f,7.0711e-001f,0.0000e+000f
+N04	= -7.0711e-001f,-7.0711e-001f,0.0000e+000f
+N05	= 0.0000e+000f,0.0000e+000f,1.0000e+000f
 F01	= 0.0000e+000f,0.0000e+000f,1.0000e+000f
 
 [Xfrm Parameters]
@@ -102,11 +59,11 @@ Yt Accuracy=0.0020000
 Zt Accuracy=0.0020000
 [Estimate]
 Markers=5
-P01=-171.44,-103.94,-1162.61
-P02=-155.02,-49.49,-1250.31
-P03=-105.91,-48.86,-1168.79
-P04=-98.83,-151.04,-1157.40
-P05=-67.02,-183.49,-1270.74
+P01=-223.03,-10.80,-1156.59
+P02=-192.88, 13.95,-1238.53
+P03=-156.04,-87.59,-1140.59
+P04=-158.21,-143.42,-1251.68
+P05=-138.14, -4.50,-1153.40
 
 --BUILD INFORMATION----------------------------
 [Build Parameters]
@@ -139,7 +96,7 @@ AlignmentDevice=0
 EndSave=1
 MoveToCentroid=1
 [Collection]
-Tracking Options=0
+Tracking Options=-1
 Collection Units=0
 Collection Frames=300
 Delay=0
@@ -154,4 +111,4 @@ ToolPort=00
 SegThres=0.450
 DotProductThres=200.000
 [FileType]
-Description=RightHand
+Description=LeftHand

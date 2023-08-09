@@ -53,7 +53,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mujoco_menagerie" TYPE PROGRAM FILES "/home/joe/sg_ws/build/mujoco_menagerie/catkin_generated/installspace/sg_control_robotiq.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mujoco_menagerie" TYPE PROGRAM FILES "/home/joe/sg_ws/build/mujoco_menagerie/catkin_generated/installspace/sg_control_robotiq_right.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/mujoco_menagerie" TYPE PROGRAM FILES "/home/joe/sg_ws/build/mujoco_menagerie/catkin_generated/installspace/sg_control_robotiq_left.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

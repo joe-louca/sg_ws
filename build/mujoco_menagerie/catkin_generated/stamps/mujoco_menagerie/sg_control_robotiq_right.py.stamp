@@ -60,7 +60,7 @@ class SG_CONTROL:
         contact_msg = Float32MultiArray()
         self.grip_cmd_ = False
 
-        model = mujoco.MjModel.from_xml_path(path_to_models + 'robotiq_2f85/scene_move.xml')
+        model = mujoco.MjModel.from_xml_path(path_to_models + 'myscenes/2f85.xml')
         data = mujoco.MjData(model)
 
         # create the viewer object
@@ -72,9 +72,6 @@ class SG_CONTROL:
         viewer.cam.elevation = -40
         viewer.cam.azimuth = +0
         viewer._paused = True
-
-        joint_id = [model.joint('rh_ballx').id, model.joint('rh_bally').id, model.joint('rh_ballz').id, model.joint('rh_ballq').id, model.joint('right_spring_link_joint').id]
-        print(joint_id)
         
         # simulate and render
         frm = 0
@@ -82,18 +79,18 @@ class SG_CONTROL:
             if self.received_rh_cmd_:
                 # Update position of the wrist base
                 #print(self.pos_rh)
-                data.qpos[joint_id[0]] = self.pos_rh[0] # x
-                data.qpos[joint_id[1]] = self.pos_rh[1] # y
-                data.qpos[joint_id[2]] = self.pos_rh[2] # z
-                data.qpos[joint_id[3]+0] = self.pos_rh[3] # ball
-                data.qpos[joint_id[3]+1] = self.pos_rh[4] # ball
-                data.qpos[joint_id[3]+2] = self.pos_rh[5] # ball
-                data.qpos[joint_id[3]+3] = self.pos_rh[6] # ball
+                data.qpos[0] = self.pos_rh[0] # x
+                data.qpos[1] = self.pos_rh[1] # y
+                data.qpos[2] = self.pos_rh[2] # z
+                data.qpos[3] = self.pos_rh[3] # ball
+                data.qpos[4] = self.pos_rh[4] # ball
+                data.qpos[5] = self.pos_rh[5] # ball
+                data.qpos[6] = self.pos_rh[6] # ball
                 
             if self.received_sg_cmd_:
                 # Set grip position: 0=open, 255=closed
                 grip_pos = ((sg_max_distance - self.thumb2pointer_distance) / sg_max_distance) * 255
-                #data.ctrl[7] = grip_pos
+                data.ctrl[7] = grip_pos
 
 
             ## CHECK THE IDS IN THIS BIT

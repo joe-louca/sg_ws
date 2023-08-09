@@ -26,10 +26,10 @@ def run():
     msgs = []
     pubs = []
     
-    tool_names = ['Wrist']
+    tool_names = ['RightHand', 'LeftHand']
     rom_location = '/home/joe/sg_ws/src/polaris/data/'
-    rom_files = [rom_location+'RightHand.rom']
-    num_tools = len(rom_files)
+    rom_files = [rom_location+'RightHand.rom', rom_location+'LeftHand.rom']
+    num_tools = len(tool_names)
 
     for i in range(num_tools):
         msgs.append(TransformStamped())
@@ -39,7 +39,7 @@ def run():
     # Define settings for tracker model and tools
     # Tool description files (.rom) can be generated using NDI 6D Architect
     # For more information on tool characterization, see the “Polaris Tool Design Guide” and the “NDI 6D Architect User Guide”
-    settings_polaris = {"tracker type": "polaris", "romfiles" : [rom_location+"RightHand.rom"]}
+    settings_polaris = {"tracker type": "polaris", "romfiles" : rom_files}
 
     # Initilise tracker object for communication with NDI trackers. 
     tracker = NDITracker(settings_polaris)
@@ -64,17 +64,17 @@ def run():
 
         port_handles, timestamps, framenumbers, trackings, qualitys = tracker.get_frame()
         for i in range(num_tools):
-            tool_pos = trackings[i]
-            if not math.isnan(tool_pos[i][0]):
+            tool_pos = trackings[i][0]
+            if not math.isnan(tool_pos[0]):
                 msgs[i].header.stamp = rospy.Time.now()
                 msgs[i].header.frame_id = tool_names[i]
-                msgs[i].transform.translation.x = tool_pos[i][4] 
-                msgs[i].transform.translation.y = tool_pos[i][5] 
-                msgs[i].transform.translation.z = tool_pos[i][6] 
-                msgs[i].transform.rotation.w = tool_pos[i][3]
-                msgs[i].transform.rotation.x = tool_pos[i][0]
-                msgs[i].transform.rotation.y = tool_pos[i][1]
-                msgs[i].transform.rotation.z = tool_pos[i][2]
+                msgs[i].transform.translation.x = tool_pos[4] 
+                msgs[i].transform.translation.y = tool_pos[5] 
+                msgs[i].transform.translation.z = tool_pos[6] 
+                msgs[i].transform.rotation.w = tool_pos[3]
+                msgs[i].transform.rotation.x = tool_pos[0]
+                msgs[i].transform.rotation.y = tool_pos[1]
+                msgs[i].transform.rotation.z = tool_pos[2]
 
                 pubs[i].publish(msgs[i])
             
