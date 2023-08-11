@@ -60,7 +60,7 @@ class SG_CONTROL:
         contact_msg = Float32MultiArray()
         self.grip_cmd_ = False
 
-        model = mujoco.MjModel.from_xml_path(path_to_models + 'robotiq_2f85/scene_move.xml')
+        model = mujoco.MjModel.from_xml_path(path_to_models + 'robotiq_2f85/scene_move_left.xml')
         data = mujoco.MjData(model)
 
         # create the viewer object
