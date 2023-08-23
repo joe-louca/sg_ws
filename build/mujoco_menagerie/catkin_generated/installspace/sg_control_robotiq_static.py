@@ -21,7 +21,7 @@ class SG_CONTROL:
         rospy.init_node('sg_MJC_controller', anonymous=True)
         t0 = rospy.get_time()
         pub = rospy.Publisher('/FingerContacts', Float32MultiArray, queue_size=1)
-        sub = rospy.Subscriber('/Delayed_TPDistance', Float32, self.callback, queue_size=1)
+        sub = rospy.Subscriber('/TPDistance', Float32, self.callback, queue_size=1)
         rate_hz = 200
         r = rospy.Rate(rate_hz)
 

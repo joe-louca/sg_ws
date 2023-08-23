@@ -12,9 +12,9 @@ import numpy as np
 class SG_CONTROL:
     def callback_rh(self, msg):       
         # Thumb
-        self.pos_rh[0] = msg.transform.translation.x/1000 + 0.3        # x
-        self.pos_rh[1] = msg.transform.translation.y/1000         # y 
-        self.pos_rh[2] = msg.transform.translation.z/1000 + 1.700  # z
+        self.pos_rh[0] = msg.transform.translation.x/1000   # x
+        self.pos_rh[1] = msg.transform.translation.y/1000   # y 
+        self.pos_rh[2] = msg.transform.translation.z/1000-0.125   # z
         self.pos_rh[3] = msg.transform.rotation.x
         self.pos_rh[4] = msg.transform.rotation.y
         self.pos_rh[5] = msg.transform.rotation.z
@@ -23,9 +23,9 @@ class SG_CONTROL:
         
     def callback_lh(self, msg):       
         # Thumb
-        self.pos_lh[0] = msg.transform.translation.x/1000 + 0.3        # x
-        self.pos_lh[1] = msg.transform.translation.y/1000         # y 
-        self.pos_lh[2] = msg.transform.translation.z/1000 + 1.700  # z
+        self.pos_lh[0] = msg.transform.translation.x/1000   # x
+        self.pos_lh[1] = msg.transform.translation.y/1000   # y 
+        self.pos_lh[2] = msg.transform.translation.z/1000-0.125  # z
         self.pos_lh[3] = msg.transform.rotation.x
         self.pos_lh[4] = msg.transform.rotation.y
         self.pos_lh[5] = msg.transform.rotation.z
@@ -47,13 +47,15 @@ class SG_CONTROL:
         self.received_rh_cmd_ = False
         self.received_lh_cmd_ = False
         self.received_sg_cmd_ = False
+
+        sg_max_distance = 100
         
         rospy.init_node('sg_MJC_controller', anonymous=True)
         t0 = rospy.get_time()
         pub = rospy.Publisher('/FingerContacts', Float32MultiArray, queue_size=1)
         sub = rospy.Subscriber('/RightHandPose', TransformStamped, self.callback_rh, queue_size=1)
         sub = rospy.Subscriber('/LeftHandPose', TransformStamped, self.callback_lh, queue_size=1)
-        sub = rospy.Subscriber('/Delayed_TPDistance', Float32, self.callback_sg, queue_size=1)
+        sub = rospy.Subscriber('/TPDistance', Float32, self.callback_sg, queue_size=1)
         rate_hz = 200
         r = rospy.Rate(rate_hz)
 
@@ -62,14 +64,15 @@ class SG_CONTROL:
 
         model = mujoco.MjModel.from_xml_path(path_to_models + 'myscenes/2f85_left.xml')
         data = mujoco.MjData(model)
+        contact_geom_ids = [model.geom('left_pad1').id, model.geom('right_pad1').id]
 
         # create the viewer object
         viewer = mujoco_viewer.MujocoViewer(model, data, hide_menus=False)
-        viewer.cam.lookat[0] = 0.4
+        viewer.cam.lookat[0] = 0.3
         viewer.cam.lookat[1] = -0.0
         viewer.cam.lookat[2] = 0.2
-        viewer.cam.distance = 1.
-        viewer.cam.elevation = -40
+        viewer.cam.distance = 1.35
+        viewer.cam.elevation = -20
         viewer.cam.azimuth = +0
         viewer._paused = True
         
@@ -88,11 +91,12 @@ class SG_CONTROL:
                 
             if self.received_sg_cmd_:
                 # Set grip position: 0=open, 255=closed
-                grip_pos = ((sg_max_distance - self.thumb2pointer_distance) / sg_max_distance) * 255
-                data.ctrl[7] = grip_pos
+                if ((sg_max_distance - self.thumb2pointer_distance) < 0):
+                    grip_pos = 0
+                else:
+                    grip_pos = ((sg_max_distance - self.thumb2pointer_distance) / sg_max_distance) * 255
+                data.ctrl[3] = grip_pos
 
-
-            ## CHECK THE IDS IN THIS BIT
             # Read contacts
             #geom ids: left pad = 13, right_pad = 25, box = 29
             contact_msg.data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -101,10 +105,10 @@ class SG_CONTROL:
                 dist = contact.dist         # -ve values are penetration
                 friction = contact.friction # 5x1 (tangent1, 2, spin, roll1, 2)
                 if dist < -0.00001:
-                    if contact.geom1 == 13:
+                    if contact.geom1 == contact_geom_ids[0]: # right
                         contact_msg.data[0] = 100
                         contact_msg.data[5] = 100
-                    elif contact.geom1 == 25:
+                    elif contact.geom1 == contact_geom_ids[1]: # left
                         contact_msg.data[1] = 100
                         contact_msg.data[6] = 100
 

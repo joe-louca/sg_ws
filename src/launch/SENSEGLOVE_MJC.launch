@@ -2,6 +2,11 @@
 <launch>
 	<arg name="sim" default="rob"/>
 	<arg name ="l" default="0"/>
+	<arg name="robotiq" default="false"/>
+	<arg name="shadow" default="false"/>
+	<arg name="allegro" default="false"/>
+	<arg name="move" default="false"/>
+	<arg name="right" default="true"/>
 	
 	<!-- Set some parameters -->
 	<param name="latency" type="double" value="$(eval arg('l'))" />
@@ -10,15 +15,49 @@
 	<node pkg="senseglove" type="senseglove_node" name="SenseGlove" output="screen"/>
 	
 	<!-- Start up polaris node -->
-	<node pkg="polaris" type="polaris_node" name="Polaris" output="screen"/>	
+	<node pkg="polaris" type="polaris_node.py" name="Polaris" output="screen"/>	
 	
 	<!-- Start up MuJoCo node -->
-	<group if="$(eval sim == 'rob')">
-		<node pkg="mujoco_menagerie" type="sg_control_robotiq.py" name="MuJoCo_Robotiq" output ="screen"/>
+	<group if="$(eval move == true)">
+		<group if="$(eval robotiq == true)">
+			<group if="$(eval right == true)">
+				<node pkg="mujoco_menagerie" type="sg_control_robotiq_right.py" name="MuJoCo_Robotiq" output ="screen"/>
+			</group>
+			<group if="$(eval right == false)">
+				<node pkg="mujoco_menagerie" type="sg_control_robotiq_left.py" name="MuJoCo_Robotiq" output ="screen"/>
+			</group>
+		</group>
+		<group if="$(eval shadow == true)">
+			<group if="$(eval right == true)">
+				<node pkg="mujoco_menagerie" type="sg_control_shadow_right.py" name="MuJoCo_Shadow" output ="screen"/>
+			</group>
+			<group if="$(eval right == false)">
+				<node pkg="mujoco_menagerie" type="sg_control_shadow_left.py" name="MuJoCo_Shadow" output ="screen"/>
+			</group>
+		</group>
+		<group if="$(eval allegro == true)">
+			<group if="$(eval right == true)">
+				<node pkg="mujoco_menagerie" type="sg_control_allegro_right.py" name="MuJoCo_Allegro" output ="screen"/>
+			</group>
+			<group if="$(eval right == false)">
+				<node pkg="mujoco_menagerie" type="sg_control_allegro_left.py" name="MuJoCo_Allegro" output ="screen"/>
+			</group>
+		</group>		
 	</group>
-	<group if="$(eval sim == 'shad')">
-		<node pkg="mujoco_menagerie" type="sg_control_shadow.py" name="MuJoCo_Shadow" output ="screen"/>
-	</group>
+	<group if="$(eval move == false)">
+		<group if="$(eval robotiq == true)">
+			<node pkg="mujoco_menagerie" type="sg_control_robotiq_static.py" name="MuJoCo_Robotiq" output ="screen"/>
+		</group>
+		<group if="$(eval shadow == true)">
+			<group if="$(eval right == true)">
+				<node pkg="mujoco_menagerie" type="sg_control_shadow_right_static.py" name="MuJoCo_Shadow" output ="screen"/>
+			</group>
+			<group if="$(eval right == false)">
+				<node pkg="mujoco_menagerie" type="sg_control_shadow_left_static.py" name="MuJoCo_Shadow" output ="screen"/>
+			</group>
+		</group>		
+	</group>			
+
 		
 	<!-- Start up nodes to subscribe and add delay -->	
 	<node pkg="delays" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	

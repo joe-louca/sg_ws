@@ -11,9 +11,9 @@ import numpy as np
 class SG_CONTROL:
     def callback_rh(self, msg):       
         # Thumb
-        self.pos_rh[0] = msg.transform.translation.x/1000 + 0.3        # x
-        self.pos_rh[1] = msg.transform.translation.y/1000         # y 
-        self.pos_rh[2] = msg.transform.translation.z/1000 + 1.700  # z
+        self.pos_rh[0] = msg.transform.translation.x/1000   # x
+        self.pos_rh[1] = msg.transform.translation.y/1000   # y 
+        self.pos_rh[2] = msg.transform.translation.z/1000   # z
         self.pos_rh[3] = msg.transform.rotation.x
         self.pos_rh[4] = msg.transform.rotation.y
         self.pos_rh[5] = msg.transform.rotation.z
@@ -22,9 +22,9 @@ class SG_CONTROL:
         
     def callback_lh(self, msg):       
         # Thumb
-        self.pos_lh[0] = msg.transform.translation.x/1000 + 0.3        # x
-        self.pos_lh[1] = msg.transform.translation.y/1000         # y 
-        self.pos_lh[2] = msg.transform.translation.z/1000 + 1.700  # z
+        self.pos_lh[0] = msg.transform.translation.x/1000   # x
+        self.pos_lh[1] = msg.transform.translation.y/1000   # y 
+        self.pos_lh[2] = msg.transform.translation.z/1000   # z
         self.pos_lh[3] = msg.transform.rotation.x
         self.pos_lh[4] = msg.transform.rotation.y
         self.pos_lh[5] = msg.transform.rotation.z
@@ -90,7 +90,7 @@ class SG_CONTROL:
         contact_msg = Float32MultiArray()
         self.grip_cmd_ = False
 
-        model = mujoco.MjModel.from_xml_path(path_to_models + 'myscenes/shadow_right.xml')
+        model = mujoco.MjModel.from_xml_path(path_to_models + 'myscenes/allegro_right.xml')
         data = mujoco.MjData(model)
 
         # create the viewer object
@@ -102,10 +102,9 @@ class SG_CONTROL:
         viewer.cam.elevation = -20
         viewer.cam.azimuth = +0
         viewer._paused = True
-        #geom_ids_tips = [model.geom('TH_TIP').id, model.geom('F1_TIP').id, model.geom('F2_TIP').id, model.geom('F3_TIP').id, model.geom('F4_TIP').id]
-        #geom_ids_meds = [model.geom('TH_MED').id, model.geom('F1_MED').id, model.geom('F2_MED').id, model.geom('F3_MED').id, model.geom('F4_MED').id]
-        #geom_ids_prxs = [model.geom('TH_PRX').id, model.geom('F1_PRX').id, model.geom('F2_PRX').id, model.geom('F3_PRX').id, model.geom('F4_PRX').id]
-        
+        geom_ids_tips = [model.geom('th_tip').id, model.geom('ff_tip').id, model.geom('mf_tip').id, model.geom('rf_tip').id]
+        geom_ids_meds = [model.geom('th_medial').id, model.geom('ff_medial').id, model.geom('mf_medial').id, model.geom('rf_medial').id]
+        geom_ids_prxs = [model.geom('th_proximal').id, model.geom('ff_proximal').id, model.geom('mf_proximal').id, model.geom('rf_proximal').id]
         # simulate and render
         frm = 0
         while not rospy.is_shutdown():
@@ -121,38 +120,26 @@ class SG_CONTROL:
                 data.qpos[6] = self.pos_rh[6] # ball
                 
             if self.received_sg_cmd_:
-                # Set joint positions. pinkie matches ring finger
-                ### Joint IDs controlling each joint independently
-                #data.ctrl[0] = 0                     # Wrist      wave       lh_A_WRJ2
-                #data.ctrl[1] = 0                     # Wrist      flex       lh_A_WRJ1
+                # Set joint positions.
+                #data.ctrl[3] = self.finger_jpos[5] # pointer base
+                data.ctrl[4] = self.finger_jpos[6] # pointer flex 1
+                data.ctrl[5] = self.finger_jpos[7] # pointer flex 2
+                data.ctrl[6] = self.finger_jpos[8] # pointer flex 3
+
+                #data.ctrl[7] = self.finger_jpos[9]   # middle base
+                data.ctrl[8] = self.finger_jpos[10]  # middle flex 1
+                data.ctrl[9] = self.finger_jpos[11]  # middle flex 2
+                data.ctrl[10] = self.finger_jpos[12] # middle flex 3
+
+                #data.ctrl[11] = self.finger_jpos[13] # ring base
+                data.ctrl[12] = self.finger_jpos[14] # ring flex 1
+                data.ctrl[13] = self.finger_jpos[15] # ring flex 2
+                data.ctrl[14] = self.finger_jpos[16] # ring flex 3
                 
-                data.ctrl[2] = self.finger_jpos[0]   # Thumb      twist    lh_A_THJ5
-                data.ctrl[3] = self.finger_jpos[1]   # Thumb      abduct1  lh_A_THJ4   at joint 1
-                #data.ctrl[4] = self.finger_jpos[1]   # Thumb      abduct2  lh_A_THJ3   at joint 2             
-                data.ctrl[5] = self.finger_jpos[3]   # Thumb      flex2    lh_A_THJ2
-                data.ctrl[6] = self.finger_jpos[4]   # Thumb      flex3    lh_A_THJ1
-                
-                #data.ctrl[7] = self.finger_jpos[5]   # Pointer    adduct   lh_A_FFJ4
-                data.ctrl[8] = self.finger_jpos[6]   # Pointer    flex1    lh_A_FFJ3
-                data.ctrl[9] = self.finger_jpos[7]   # Pointer    flex2    lh_A_FFJ2
-                data.ctrl[10] = self.finger_jpos[8]  # Pointer    flex3    lh_A_FFJ1
-                
-                #data.ctrl[11] = self.finger_jpos[9]  # Middle     abduct   lh_A_MFJ4
-                data.ctrl[12] = self.finger_jpos[10] # Middle     flex1    lh_A_MFJ3
-                data.ctrl[13] = self.finger_jpos[11] # Middle     flex3    lh_A_MFJ2
-                data.ctrl[14] = self.finger_jpos[12] # Middle     flex3    lh_A_MFJ1
-                
-                data.ctrl[15] = 0#self.finger_jpos[13] # Ring       abduct   lh_A_RFJ4
-                data.ctrl[16] = self.finger_jpos[14] # Ring       flex1    lh_A_RFJ3
-                data.ctrl[17] = self.finger_jpos[15] # Ring       flex2    lh_A_RFJ2
-                data.ctrl[18] = self.finger_jpos[16] # Ring       flex3    lh_A_RFJ1
-                
-                #data.ctrl[19] = 0                    # Pinkiebase flex     lh_A_LFJ5
-                
-                #data.ctrl[20] = self.finger_jpos[13] # Pinkie     abduct   lh_A_LFJ4
-                data.ctrl[21] = self.finger_jpos[14] # Pinkie     flex1    lh_A_LFJ3
-                data.ctrl[22] = self.finger_jpos[15] # Pinkie     flex2    lh_A_LFJ2
-                data.ctrl[23] = self.finger_jpos[16] # Pinkie     flex3    lh_A_LFJ1
+                data.ctrl[15] = self.finger_jpos[1]*2   # Thumb    15 = palm fold    
+                data.ctrl[16] = self.finger_jpos[0]*3   # Thumb      16 = twist
+                data.ctrl[17] = (self.finger_jpos[2]+self.finger_jpos[3]/2)*3   # Thumb      17 = flex 1             
+                data.ctrl[18] = (self.finger_jpos[3]/2+self.finger_jpos[4])*1   # Thumb      18 = flex 2
 
                 # TESTING
                 #if frm % 100 > 50:
@@ -161,28 +148,28 @@ class SG_CONTROL:
                 #    data.ctrl[3] = 0*math.pi/180
 
             # Read contacts
-##            contact_msg.data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-##            for i in range(data.ncon):
-##                contact = data.contact[i]
-##                dist = contact.dist         # -ve values are penetration
-##                friction = contact.friction # 5x1 (tangent1, 2, spin, roll1, 2)
-##                for g in range(5):
-##                    if dist < 0:
-##                        if contact.geom1 == geom_ids_tips[g] or contact.geom2 == geom_ids_tips[g]:
-##                            if -dist < 0.00001:
-##                                contact_msg.data[g] += 100   # vib
-##                                contact_msg.data[g+5] += 100 # force
-##                        elif contact.geom1 == geom_ids_meds[g] or contact.geom2 == geom_ids_meds[g]:
-##                            if -dist < 0.00001:
-##                                contact_msg.data[g] += 80   # vib
-##                                contact_msg.data[g+5] += 80 # force                            
-##                        elif contact.geom1 == geom_ids_prxs[g] or contact.geom2 == geom_ids_prxs[g]:
-##                            if -dist < 0.00001:
-##                                contact_msg.data[g] += 70   # vib
-##                                contact_msg.data[g+5] += 70 # force
-##                        
-##            contact_msg.data[10] = rospy.get_time() - t0
-##            pub.publish(contact_msg)        # [Left Buzz, Left Force, Right Buzz, Right Force, Time]
+            contact_msg.data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            for i in range(data.ncon):
+                contact = data.contact[i]
+                dist = contact.dist         # -ve values are penetration
+                friction = contact.friction # 5x1 (tangent1, 2, spin, roll1, 2)
+                for g in range(4):
+                    if dist < 0:
+                        if contact.geom1 == geom_ids_tips[g] or contact.geom2 == geom_ids_tips[g]:
+                            if -dist < 0.00001:
+                                contact_msg.data[g] += 100   # vib
+                                contact_msg.data[g+5] += 100 # force
+                        elif contact.geom1 == geom_ids_meds[g] or contact.geom2 == geom_ids_meds[g]:
+                            if -dist < 0.00001:
+                                contact_msg.data[g] += 80   # vib
+                                contact_msg.data[g+5] += 80 # force                            
+                        elif contact.geom1 == geom_ids_prxs[g] or contact.geom2 == geom_ids_prxs[g]:
+                            if -dist < 0.00001:
+                                contact_msg.data[g] += 70   # vib
+                                contact_msg.data[g+5] += 70 # force
+                        
+            contact_msg.data[10] = rospy.get_time() - t0
+            pub.publish(contact_msg)        # [Left Buzz, Left Force, Right Buzz, Right Force, Time]
             
             if viewer.is_alive:
                 mujoco.mj_step(model, data)
@@ -198,34 +185,3 @@ class SG_CONTROL:
 
 if __name__ == '__main__':
     foo = SG_CONTROL()
-
-
-
-
-### JOINT IDs IF USING TENDONS
-##                data.ctrl[0] = 0                     # Wrist      wave       lh_A_WRJ2
-##                data.ctrl[1] = 0                     # Wrist      flex       lh_A_WRJ1
-                
-##                data.ctrl[2] = self.finger_jpos[0]   # Thumb      twist    lh_A_THJ5
-##                data.ctrl[3] = self.finger_jpos[2]   # Thumb      flex1    lh_A_THJ4
-##                data.ctrl[4] = self.finger_jpos[3]   # Thumb      flex2    lh_A_THJ3                
-##                data.ctrl[5] = self.finger_jpos[1]   # Thumb      adduct   lh_A_THJ2** At joint2
-##                data.ctrl[6] = self.finger_jpos[4]   # Thumb      flex3    lh_A_THJ1
-                
-##                data.ctrl[7] = self.finger_jpos[5]   # Pointer    adduct   lh_A_FFJ4
-##                data.ctrl[8] = self.finger_jpos[6]   # Pointer    flex1    lh_A_FFJ3
-##                data.ctrl[9] = self.finger_jpos[7]   # Pointer    flex2&3  lh_A_FFJ0**
-                
-##                data.ctrl[10] = self.finger_jpos[9]  # Middle     abduct   lh_A_MFJ4
-##                data.ctrl[11] = self.finger_jpos[10] # Middle     flex1    lh_A_MFJ3
-##                data.ctrl[12] = self.finger_jpos[11] # Middle     flex2&3  lh_A_MFJ0**
-                
-##                data.ctrl[13] = self.finger_jpos[13] # Ring       abduct   lh_A_RFJ4
-##                data.ctrl[14] = self.finger_jpos[14] # Ring       flex1    lh_A_RFJ3
-##                data.ctrl[15] = self.finger_jpos[15] # Ring       flex2&3  lh_A_RFJ0**
-                
-##                data.ctrl[16] = 0                   # Pinkiebase flex     lh_A_LFJ5
-                
-##                data.ctrl[17] = self.finger_jpos[13] # Pinkie     abduct   lh_A_LFJ4
-##                data.ctrl[18] = self.finger_jpos[14] # Pinkie     flex1    lh_A_LFJ3
-##                data.ctrl[19] = self.finger_jpos[15] # Pinkie     flex2&3  lh_A_LFJ0**

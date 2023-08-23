@@ -48,11 +48,11 @@ class listener
 		listener::msg_received = true;
     }
 
-void Publish_TPdist(double dist, ros::Publisher ros_pub)
+void Publish_TP(double value, ros::Publisher ros_pub)
 {
-	std_msgs::Float32 dist_msg;
-	dist_msg.data = dist;
-	ros_pub.publish(dist_msg);
+	std_msgs::Float32 TP_msg;
+	TP_msg.data = value;
+	ros_pub.publish(TP_msg);
 }
 
 void Publish_A(float* angles, ros::Publisher ros_pub)
@@ -100,37 +100,38 @@ int main(int argc, char* argv[])
 	argv = NULL;
 	ros::init(argc, argv, "SenseGloveNova");
     ros::NodeHandle n;
-	ros::Publisher F0_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J0/Position", 1);
-	ros::Publisher F0_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J1/Position", 1);
-	ros::Publisher F0_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J2/Position", 1);
-	ros::Publisher F0_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J3/Position", 1);
-	ros::Publisher F1_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J0/Position", 1);
-	ros::Publisher F1_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J1/Position", 1);
-	ros::Publisher F1_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J2/Position", 1);
-	ros::Publisher F1_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J3/Position", 1);
-	ros::Publisher F2_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J0/Position", 1);
-	ros::Publisher F2_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J1/Position", 1);
-	ros::Publisher F2_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J2/Position", 1);
-	ros::Publisher F2_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J3/Position", 1);
-	ros::Publisher F3_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J0/Position", 1);
-	ros::Publisher F3_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J1/Position", 1);
-	ros::Publisher F3_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J2/Position", 1);
-	ros::Publisher F3_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J3/Position", 1);
-	ros::Publisher F4_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J0/Position", 1);
-	ros::Publisher F4_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J1/Position", 1);
-	ros::Publisher F4_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J2/Position", 1);
-	ros::Publisher F4_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J3/Position", 1);
+	// ros::Publisher F0_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J0/Position", 1);
+	// ros::Publisher F0_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J1/Position", 1);
+	// ros::Publisher F0_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J2/Position", 1);
+	// ros::Publisher F0_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J3/Position", 1);
+	// ros::Publisher F1_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J0/Position", 1);
+	// ros::Publisher F1_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J1/Position", 1);
+	// ros::Publisher F1_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J2/Position", 1);
+	// ros::Publisher F1_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F1/J3/Position", 1);
+	// ros::Publisher F2_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J0/Position", 1);
+	// ros::Publisher F2_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J1/Position", 1);
+	// ros::Publisher F2_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J2/Position", 1);
+	// ros::Publisher F2_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F2/J3/Position", 1);
+	// ros::Publisher F3_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J0/Position", 1);
+	// ros::Publisher F3_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J1/Position", 1);
+	// ros::Publisher F3_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J2/Position", 1);
+	// ros::Publisher F3_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F3/J3/Position", 1);
+	// ros::Publisher F4_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J0/Position", 1);
+	// ros::Publisher F4_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J1/Position", 1);
+	// ros::Publisher F4_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J2/Position", 1);
+	// ros::Publisher F4_J3_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F4/J3/Position", 1);
 	
 	ros::Publisher FingerJointAngles_pub = n.advertise<std_msgs::Float32MultiArray>("/FingerJointAngles", 1);
-
+	//ros::Publisher FingerJointVelocities_pub = n.advertise<std_msgs::Float32MultiArray>("/FingerJointVelocities", 1);
 	ros::Publisher TPdist_pub = n.advertise<std_msgs::Float32>("/TPDistance", 1);
+	ros::Publisher TPvel_pub = n.advertise<std_msgs::Float32>("/TPVelocity", 1);
 
 	// Collate these into an array
-	ros::Publisher position_rospubbers[5][5] = { {F0_J0_Position_pub, F0_J1_Position_pub, F0_J2_Position_pub, F0_J3_Position_pub},
-												 {F1_J0_Position_pub, F1_J1_Position_pub, F1_J2_Position_pub, F1_J3_Position_pub},
-												 {F2_J0_Position_pub, F2_J1_Position_pub, F2_J2_Position_pub, F2_J3_Position_pub},
-												 {F3_J0_Position_pub, F3_J1_Position_pub, F3_J2_Position_pub, F3_J3_Position_pub},
-												 {F4_J0_Position_pub, F4_J1_Position_pub, F4_J2_Position_pub, F4_J3_Position_pub} };
+	// ros::Publisher position_rospubbers[5][5] = { {F0_J0_Position_pub, F0_J1_Position_pub, F0_J2_Position_pub, F0_J3_Position_pub},
+	// 											 {F1_J0_Position_pub, F1_J1_Position_pub, F1_J2_Position_pub, F1_J3_Position_pub},
+	// 											 {F2_J0_Position_pub, F2_J1_Position_pub, F2_J2_Position_pub, F2_J3_Position_pub},
+	// 											 {F3_J0_Position_pub, F3_J1_Position_pub, F3_J2_Position_pub, F3_J3_Position_pub},
+	// 											 {F4_J0_Position_pub, F4_J1_Position_pub, F4_J2_Position_pub, F4_J3_Position_pub} };
 	
 	listener list;
     ros::Subscriber Contact_sub = n.subscribe<std_msgs::Float32MultiArray>("/FingerContacts", 1, &listener::Contacts_Callback, &list);
@@ -341,6 +342,11 @@ int main(int argc, char* argv[])
 			
 			SGCore::Kinematics::Vect3D thumb_pointer_vector;
 			double thumb_pointer_distance;
+			double thumb_pointer_distance_last;
+			double thumb_pointer_velocity;		
+			bool first_loop = true;
+			bool publish_v = false;
+			int count = 0;
 
 			while (ros::ok())
 			{
@@ -356,7 +362,7 @@ int main(int argc, char* argv[])
 							// position of the hand joints in 3D space, in millimeters, relative to the wrist (0, 0, 0). 
 							// JointPositions is a 5x4 array of Vectors
 							jointP = wristP + (wristR * handPose.jointPositions[f][j]);
-							Publish_P(jointP, position_rospubbers[f][j]);
+							// Publish_P(jointP, position_rospubbers[f][j]);
 						}
 					}
 
@@ -391,8 +397,30 @@ int main(int argc, char* argv[])
 
 					//std::cout<< (handPose.jointPositions[1][3].x) - (handPose.jointPositions[0][3].x) << std::endl;
 					thumb_pointer_distance = abs(40-pow( (pow(thumb_pointer_vector.x, 2) + pow(thumb_pointer_vector.y,2) + pow(thumb_pointer_vector.z,2)), 0.5));
+					if (first_loop){thumb_pointer_distance_last = thumb_pointer_distance;}
+					
+					if (publish_v)
+					{
+						double tmp_dp = (thumb_pointer_distance-thumb_pointer_distance_last);
+						if (abs(tmp_dp) > 0.001) {thumb_pointer_velocity = tmp_dp/(0.005*5);}
+						else{thumb_pointer_velocity=0;}
+						Publish_TP(thumb_pointer_velocity, TPvel_pub);
+						thumb_pointer_distance_last = thumb_pointer_distance;
+					}
+
 					//if (thumb_pointer_distance<0) {thumb_pointer_distance=0;}
-					Publish_TPdist(thumb_pointer_distance, TPdist_pub);
+					Publish_TP(thumb_pointer_distance, TPdist_pub);
+					//Publish_TP(thumb_pointer_velocity, TPvel_pub);
+
+					//thumb_pointer_distance_last = thumb_pointer_distance;
+					first_loop = false;
+					count+=1;
+					if (count==5)
+					{
+						publish_v = true;
+						count = 0;
+					}
+					else {publish_v = false;}
 				}
 				else //This function could return false if no data for this glove is available (yet).
 				{

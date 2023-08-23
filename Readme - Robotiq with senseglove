@@ -1,0 +1,26 @@
+Robotiq control with senseglove
+
+disconnect_sg
+connect_sg
+
+rosparam set latency X (seconds)
+
+# Setup senseglove
+rosrun senseglove senseglove_node
+
+# Setup robotiq (sim)
+  (sim)
+rosrun mujoco_menagerie sg_control_robotiq_static.py
+
+  (real)
+rosrun robotiq_2f_gripper_control Robotiq2FGripperRtuNode.py /dev/ttyUSB0
+rosrun robotiq_2f_gripper_control gripper_cmd_pub.py
+%% RUN SENSOR READINGS, publish to /FingerContacts
+
+# Setup delays
+rosrun delays topic_delay.py TPDistance
+rosrun delays topic_delay.py TPVelocity
+rosrun delays topic_delay.py FingerJointAngles
+rosrun delays topic_delay.py FingerContacts
+
+

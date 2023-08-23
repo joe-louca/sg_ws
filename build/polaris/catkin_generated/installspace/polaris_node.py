@@ -8,6 +8,8 @@ with NDI Polaris, Vega, and Aurora trackers.
 import time
 import math
 import rospy
+from scipy.spatial.transform import Rotation as R
+import numpy as np
 from sksurgerynditracker.nditracker import NDITracker
 from geometry_msgs.msg import TransformStamped
 
@@ -28,7 +30,7 @@ def run():
     
     tool_names = ['RightHand', 'LeftHand']
     rom_location = '/home/joe/sg_ws/src/polaris/data/'
-    rom_files = [rom_location+'RightHand.rom', rom_location+'LeftHand.rom']
+    rom_files = [rom_location+'RightHand.rom', rom_location+'LeftHand.rom', rom_location+'ReferenceMarker.rom']
     num_tools = len(tool_names)
 
     for i in range(num_tools):
@@ -50,6 +52,18 @@ def run():
     # Get the port handles and tool descriptions
     tool_descriptions = tracker.get_tool_descriptions()
 
+
+    # Get reference frame transformation matrices
+    port_handles, timestamps, framenumbers, trackings, qualitys = tracker.get_frame()
+    ref_pos = trackings[2][0]
+    ref_pos_q = R.from_quat([ref_pos[1], ref_pos[2], ref_pos[3], ref_pos[0]])
+    ref_pos_rot = ref_pos_q.as_matrix()
+    T_pol2ref = np.array([[ref_pos_rot[0][0], ref_pos_rot[0][1], ref_pos_rot[0][2], ref_pos[4]],
+                          [ref_pos_rot[1][0], ref_pos_rot[1][1], ref_pos_rot[1][2], ref_pos[5]],
+                          [ref_pos_rot[2][0], ref_pos_rot[2][1], ref_pos_rot[2][2], ref_pos[6]],
+                          [                0,                 0,                 0,          1]])             
+    T_ref2pol =  np.linalg.inv(T_pol2ref)
+
     while not rospy.is_shutdown():
         # tracker.get_frame() - Gets a frame of tracking data from the NDI device.
         # port_numbers: list of port handles, one per tool
@@ -66,18 +80,35 @@ def run():
         for i in range(num_tools):
             tool_pos = trackings[i][0]
             if not math.isnan(tool_pos[0]):
+                # Convert to T matrix
+                hand_pos = tool_pos
+                hand_quat = R.from_quat([hand_pos[1], hand_pos[2], hand_pos[3], hand_pos[0]])
+                hand_rot = hand_quat.as_matrix()
+                T_pol2hand = np.array([[hand_rot[0][0], hand_rot[0][1], hand_rot[0][2], hand_pos[4]],
+                                       [hand_rot[1][0], hand_rot[1][1], hand_rot[1][2], hand_pos[5]],
+                                       [hand_rot[2][0], hand_rot[2][1], hand_rot[2][2], hand_pos[6]],
+                                       [             0,              0,              0,           1]])
+                # Calculate hand pose in reference frame
+                T_ref2hand = np.dot(T_ref2pol, T_pol2hand)
+                
+                # Convert to quaternion in the reference
+                hand_quat = R.from_matrix([[T_ref2hand[0][0], T_ref2hand[0][1], T_ref2hand[0][2]],
+                                           [T_ref2hand[1][0], T_ref2hand[1][1], T_ref2hand[1][2]],
+                                           [T_ref2hand[2][0], T_ref2hand[2][1], T_ref2hand[2][2]]]).as_quat()
+
+                # Publish hand pose
                 msgs[i].header.stamp = rospy.Time.now()
                 msgs[i].header.frame_id = tool_names[i]
-                msgs[i].transform.translation.x = tool_pos[4] 
-                msgs[i].transform.translation.y = tool_pos[5] 
-                msgs[i].transform.translation.z = tool_pos[6] 
+                msgs[i].transform.translation.x = T_ref2hand[0][3] 
+                msgs[i].transform.translation.y = T_ref2hand[1][3] 
+                msgs[i].transform.translation.z = T_ref2hand[2][3] 
                 msgs[i].transform.rotation.w = tool_pos[3]
                 msgs[i].transform.rotation.x = tool_pos[0]
                 msgs[i].transform.rotation.y = tool_pos[1]
                 msgs[i].transform.rotation.z = tool_pos[2]
 
                 pubs[i].publish(msgs[i])
-            
+
         r.sleep()
 
     # Tell the NDI devices to stop tracking.

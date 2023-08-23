@@ -518,6 +518,39 @@ polaris_BINARY_DIR:STATIC=/home/joe/sg_ws/build/polaris
 //Value Computed by CMake
 polaris_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/polaris
 
+//Value Computed by CMake
+robotiq_2f_gripper_control_BINARY_DIR:STATIC=/home/joe/sg_ws/build/robotiq/robotiq_2f_gripper_control
+
+//Value Computed by CMake
+robotiq_2f_gripper_control_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/robotiq/robotiq_2f_gripper_control
+
+//Value Computed by CMake
+robotiq_ethercat_BINARY_DIR:STATIC=/home/joe/sg_ws/build/robotiq/robotiq_ethercat
+
+//The directory containing a CMake configuration file for robotiq_ethercat.
+robotiq_ethercat_DIR:PATH=/home/joe/sg_ws/devel/share/robotiq_ethercat/cmake
+
+//Value Computed by CMake
+robotiq_ethercat_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/robotiq/robotiq_ethercat
+
+//Value Computed by CMake
+robotiq_ft_sensor_BINARY_DIR:STATIC=/home/joe/sg_ws/build/robotiq/robotiq_ft_sensor
+
+//Value Computed by CMake
+robotiq_ft_sensor_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/robotiq/robotiq_ft_sensor
+
+//Value Computed by CMake
+robotiq_modbus_rtu_BINARY_DIR:STATIC=/home/joe/sg_ws/build/robotiq/robotiq_modbus_rtu
+
+//Value Computed by CMake
+robotiq_modbus_rtu_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/robotiq/robotiq_modbus_rtu
+
+//Value Computed by CMake
+robotiq_modbus_tcp_BINARY_DIR:STATIC=/home/joe/sg_ws/build/robotiq/robotiq_modbus_tcp
+
+//Value Computed by CMake
+robotiq_modbus_tcp_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/robotiq/robotiq_modbus_tcp
+
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake
 
@@ -553,6 +586,9 @@ sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
 
 //The directory containing a CMake configuration file for shape_msgs.
 shape_msgs_DIR:PATH=/opt/ros/noetic/share/shape_msgs/cmake
+
+//The directory containing a CMake configuration file for soem.
+soem_DIR:PATH=/opt/ros/noetic/share/soem/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
@@ -728,7 +764,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
