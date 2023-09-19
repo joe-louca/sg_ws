@@ -4,6 +4,7 @@ import rospy
 import sys
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import Float32
+from sensor_msgs.msg import Image
 import numpy as np
 
 class TOPIC_DELAY():
@@ -41,15 +42,21 @@ class TOPIC_DELAY():
         if topic_name == 'FingerContacts' or topic_name == 'FingerJointAngles':
             self.delayed_msg = Float32MultiArray()
             pub = rospy.Publisher('/Delayed_'+topic_name, Float32MultiArray, queue_size=1)
-            sub = rospy.Subscriber('/'+topic_name, Float32MultiArray, self.callback, queue_size=1) 
+            sub = rospy.Subscriber('/'+topic_name, Float32MultiArray, self.callback, queue_size=1)
+            self.rate_hz = 200
+        elif topic_name == 'Camera':
+            self.delayed_msg = Image()
+            pub = rospy.Publisher('/Delayed_'+topic_name, Image, queue_size=1)
+            sub = rospy.Subscriber('/'+topic_name, Image, self.callback, queue_size=1)
+            self.rate_hz = 25
         else: #TPDistance
             self.delayed_msg = Float32()
             pub = rospy.Publisher('/Delayed_'+topic_name, Float32, queue_size=1)
-            sub = rospy.Subscriber('/'+topic_name, Float32, self.callback, queue_size=1) 
+            sub = rospy.Subscriber('/'+topic_name, Float32, self.callback, queue_size=1)
+            self.rate_hz = 200
 
         # Get some parameters
         self.latency = rospy.get_param('latency')
-        self.rate_hz = 200
         self.delayed_tbl = np.array([None, None])
     
         self.t0 = rospy.get_time()

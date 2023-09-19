@@ -243,49 +243,19 @@ octomap_msgs_generate_messages_py/fast:
 .PHONY : octomap_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
-.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-octomap_msgs_generate_messages_nodejs: senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+trajectory_msgs_generate_messages_lisp: senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : octomap_msgs_generate_messages_nodejs
+.PHONY : trajectory_msgs_generate_messages_lisp
 
 # fast build rule for target.
-octomap_msgs_generate_messages_nodejs/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
-.PHONY : octomap_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_lisp: senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_lisp
-
-# fast build rule for target.
-octomap_msgs_generate_messages_lisp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build
-.PHONY : octomap_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_cpp: senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_cpp
-
-# fast build rule for target.
-octomap_msgs_generate_messages_cpp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build
-.PHONY : octomap_msgs_generate_messages_cpp/fast
+trajectory_msgs_generate_messages_lisp/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 senseglove/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule:
@@ -303,19 +273,124 @@ moveit_msgs_generate_messages_cpp/fast:
 .PHONY : moveit_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_lisp: senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+actionlib_generate_messages_cpp: senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_lisp
+.PHONY : actionlib_generate_messages_cpp
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
+actionlib_generate_messages_cpp/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_py: senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
+.PHONY : senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+shape_msgs_generate_messages_nodejs: senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : shape_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+shape_msgs_generate_messages_nodejs/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build
+.PHONY : shape_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
+.PHONY : senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+object_recognition_msgs_generate_messages_py: senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
+
+.PHONY : object_recognition_msgs_generate_messages_py
+
+# fast build rule for target.
+object_recognition_msgs_generate_messages_py/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build.make senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build
+.PHONY : object_recognition_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_generate_messages_py.dir/build.make senseglove/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_cpp: senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+.PHONY : senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_nodejs: senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
+.PHONY : senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+moveit_msgs_generate_messages_eus: senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
+
+.PHONY : moveit_msgs_generate_messages_eus
+
+# fast build rule for target.
+moveit_msgs_generate_messages_eus/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build
+.PHONY : moveit_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 senseglove/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
@@ -348,34 +423,79 @@ shape_msgs_generate_messages_py/fast:
 .PHONY : shape_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
-.PHONY : senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
+senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-moveit_msgs_generate_messages_lisp: senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
+actionlib_generate_messages_nodejs: senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
-.PHONY : moveit_msgs_generate_messages_lisp
+.PHONY : actionlib_generate_messages_nodejs
 
 # fast build rule for target.
-moveit_msgs_generate_messages_lisp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build.make senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build
-.PHONY : moveit_msgs_generate_messages_lisp/fast
+actionlib_generate_messages_nodejs/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
 
 # Convenience name for target.
-senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
-.PHONY : senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-moveit_msgs_generate_messages_nodejs: senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+trajectory_msgs_generate_messages_eus: senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 
-.PHONY : moveit_msgs_generate_messages_nodejs
+.PHONY : trajectory_msgs_generate_messages_eus
 
 # fast build rule for target.
-moveit_msgs_generate_messages_nodejs/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build
-.PHONY : moveit_msgs_generate_messages_nodejs/fast
+trajectory_msgs_generate_messages_eus/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
+.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_eus: senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_eus
+
+# fast build rule for target.
+octomap_msgs_generate_messages_eus/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build
+.PHONY : octomap_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_nodejs: senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_nodejs/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_nodejs: senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+octomap_msgs_generate_messages_nodejs/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
+.PHONY : octomap_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 senseglove/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
@@ -423,6 +543,21 @@ moveit_msgs_generate_messages_py/fast:
 .PHONY : moveit_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+.PHONY : senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+moveit_msgs_generate_messages_nodejs: senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : moveit_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+moveit_msgs_generate_messages_nodejs/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build
+.PHONY : moveit_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 senseglove/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
 	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 .PHONY : senseglove/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
@@ -453,274 +588,19 @@ shape_msgs_generate_messages_cpp/fast:
 .PHONY : shape_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-senseglove/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : senseglove/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
+.PHONY : senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_py: senseglove/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+moveit_msgs_generate_messages_lisp: senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_py
+.PHONY : moveit_msgs_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make senseglove/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
-.PHONY : senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-moveit_msgs_generate_messages_eus: senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
-
-.PHONY : moveit_msgs_generate_messages_eus
-
-# fast build rule for target.
-moveit_msgs_generate_messages_eus/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build
-.PHONY : moveit_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
-.PHONY : senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-object_recognition_msgs_generate_messages_py: senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
-
-.PHONY : object_recognition_msgs_generate_messages_py
-
-# fast build rule for target.
-object_recognition_msgs_generate_messages_py/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build.make senseglove/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build
-.PHONY : object_recognition_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : senseglove/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: senseglove/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : senseglove/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: senseglove/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make senseglove/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
-.PHONY : senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-object_recognition_msgs_generate_messages_eus: senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
-
-.PHONY : object_recognition_msgs_generate_messages_eus
-
-# fast build rule for target.
-object_recognition_msgs_generate_messages_eus/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build
-.PHONY : object_recognition_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : senseglove/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: senseglove/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : senseglove/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: senseglove/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make senseglove/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make senseglove/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make senseglove/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-octomap_msgs_generate_messages_eus: senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
-
-.PHONY : octomap_msgs_generate_messages_eus
-
-# fast build rule for target.
-octomap_msgs_generate_messages_eus/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build
-.PHONY : octomap_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-.PHONY : trajectory_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_eus: senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_eus/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-.PHONY : trajectory_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: senseglove/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_generate_messages_py.dir/build.make senseglove/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make senseglove/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
-.PHONY : senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-shape_msgs_generate_messages_nodejs: senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : shape_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-shape_msgs_generate_messages_nodejs/fast:
-	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build
-.PHONY : shape_msgs_generate_messages_nodejs/fast
+moveit_msgs_generate_messages_lisp/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build.make senseglove/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build
+.PHONY : moveit_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 senseglove/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
@@ -843,6 +723,21 @@ object_recognition_msgs_generate_messages_cpp/fast:
 .PHONY : object_recognition_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
+.PHONY : senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+object_recognition_msgs_generate_messages_eus: senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
+
+.PHONY : object_recognition_msgs_generate_messages_eus
+
+# fast build rule for target.
+object_recognition_msgs_generate_messages_eus/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build.make senseglove/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build
+.PHONY : object_recognition_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 senseglove/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule
 .PHONY : senseglove/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule
@@ -856,6 +751,36 @@ object_recognition_msgs_generate_messages_nodejs: senseglove/CMakeFiles/object_r
 object_recognition_msgs_generate_messages_nodejs/fast:
 	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build.make senseglove/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build
 .PHONY : object_recognition_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
+.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_cpp: senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_cpp
+
+# fast build rule for target.
+octomap_msgs_generate_messages_cpp/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build
+.PHONY : octomap_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule:
+	cd /home/joe/sg_ws/build && $(MAKE) -f CMakeFiles/Makefile2 senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+.PHONY : senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_lisp: senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_lisp
+
+# fast build rule for target.
+octomap_msgs_generate_messages_lisp/fast:
+	cd /home/joe/sg_ws/build && $(MAKE) -f senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build.make senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build
+.PHONY : octomap_msgs_generate_messages_lisp/fast
 
 senseglove_node.o: senseglove_node.cpp.o
 
@@ -901,38 +826,30 @@ help:
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... octomap_msgs_generate_messages_py"
-	@echo "... octomap_msgs_generate_messages_nodejs"
-	@echo "... octomap_msgs_generate_messages_lisp"
-	@echo "... octomap_msgs_generate_messages_cpp"
-	@echo "... moveit_msgs_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... moveit_msgs_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... shape_msgs_generate_messages_nodejs"
+	@echo "... object_recognition_msgs_generate_messages_py"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... moveit_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... shape_msgs_generate_messages_py"
-	@echo "... moveit_msgs_generate_messages_lisp"
-	@echo "... moveit_msgs_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... trajectory_msgs_generate_messages_eus"
+	@echo "... octomap_msgs_generate_messages_eus"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... octomap_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... object_recognition_msgs_generate_messages_lisp"
 	@echo "... moveit_msgs_generate_messages_py"
+	@echo "... moveit_msgs_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... shape_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... moveit_msgs_generate_messages_eus"
-	@echo "... object_recognition_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... object_recognition_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... octomap_msgs_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
-	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... trajectory_msgs_generate_messages_cpp"
-	@echo "... shape_msgs_generate_messages_nodejs"
+	@echo "... moveit_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_lisp"
@@ -942,7 +859,10 @@ help:
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... object_recognition_msgs_generate_messages_cpp"
+	@echo "... object_recognition_msgs_generate_messages_eus"
 	@echo "... object_recognition_msgs_generate_messages_nodejs"
+	@echo "... octomap_msgs_generate_messages_cpp"
+	@echo "... octomap_msgs_generate_messages_lisp"
 	@echo "... senseglove_node.o"
 	@echo "... senseglove_node.i"
 	@echo "... senseglove_node.s"

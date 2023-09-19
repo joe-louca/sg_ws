@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("delay")
+subdirs("fingertips")
 subdirs("mujoco_menagerie")
 subdirs("launch")
 subdirs("polaris")
@@ -14,4 +15,5 @@ subdirs("robotiq/robotiq_2f_gripper_control")
 subdirs("robotiq/robotiq_ft_sensor")
 subdirs("robotiq/robotiq_modbus_rtu")
 subdirs("robotiq/robotiq_modbus_tcp")
+subdirs("cameras")
 subdirs("senseglove")

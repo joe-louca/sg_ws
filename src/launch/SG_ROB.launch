@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name ="l" default="0"/>
+	<arg name="FB" default="0"/>
+	
+	<!-- Set some parameters -->
+	<param name="latency" type="double" value="$(eval arg('l'))" />
+	
+	<!-- Robotiq commander -->
+	<node pkg="robotiq_2f_gripper_control" type="gripper_cmd_pub.py" name="RobotiqGripperCmd"/>
+	
+	<!--Feedback Type-->
+	<group if="$(eval FB == 0)">
+		<node pkg="fingertips" type="fingertip_contact_pub.py" name="FingertipSensors"/>
+	</group>
+	<group if="$(eval FB == 1)">
+		<node pkg="fingertips" type="fingertip_contact_pub.py" name="FingertipSensors"/>
+	</group>
+
+</launch>

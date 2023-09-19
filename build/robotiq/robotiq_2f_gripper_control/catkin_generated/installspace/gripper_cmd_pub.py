@@ -88,26 +88,42 @@ def publisher():
     pub.publish(command)
     sleep(0.1)
 
+    i=0
+    smooth_num = 10
+    gripper_smooth_arr = [None] * smooth_num
+    full = False
+    
     cmd_ready = False
-    while not rospy.is_shutdown():
+    while not rospy.is_shutdown():       
         try:
             if cmd_ready:
-                # build command msg
-                if gripper_cmd > gripper_max:
-                    gripper_pos = 255
-                elif gripper_cmd < 0:
-                    gripper_pos = 0
-                else:
-                    gripper_pos = 255-int(255*gripper_cmd/gripper_max)
+                gripper_smooth_arr[i] = gripper_cmd
+
+                i += 1
+                if i == smooth_num:
+                    full = True
+                    i = 0
+
+                if full:
+                    gripper_smoothed = sum(gripper_smooth_arr) / smooth_num
+                    print(gripper_smoothed)
+                    # build command msg
+                    if gripper_smoothed > gripper_max:
+                        gripper_pos = 255
+                    elif gripper_smoothed < 0:
+                        gripper_pos = 0
+                    else:
+                        gripper_pos = 255-int(255*gripper_smoothed/gripper_max)
+                        
+                    command.rACT = 1  # activate
+                    command.rGTO = 1  # go to action
+                    command.rATR = 0  # Reset??
+                    command.rPR = gripper_pos # 255 open, 0 closed
+                    command.rSP = 150 # max speed
+                    command.rFR = 200 # max force
+                    # publish to gripper        
+                    pub.publish(command)
                     
-                command.rACT = 1  # activate
-                command.rGTO = 1  # go to action
-                command.rATR = 0  # Reset??
-                command.rPR = gripper_pos # 255 open, 0 closed
-                command.rSP = 255 # max speed
-                command.rFR = 255 # max force
-                # publish to gripper        
-                pub.publish(command)
                 cmd_ready = False
 
                 

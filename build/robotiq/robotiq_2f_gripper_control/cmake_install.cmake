@@ -108,6 +108,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robotiq_2f_gripper_control" TYPE PROGRAM FILES "/home/joe/sg_ws/build/robotiq/robotiq_2f_gripper_control/catkin_generated/installspace/gripper_force_pub.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robotiq_2f_gripper_control" TYPE PROGRAM FILES
     "/home/joe/sg_ws/src/robotiq/robotiq_2f_gripper_control/nodes/Robotiq2FGripperSimpleController.py"
     "/home/joe/sg_ws/src/robotiq/robotiq_2f_gripper_control/nodes/Robotiq2FGripperStatusListener.py"
@@ -115,6 +119,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/joe/sg_ws/src/robotiq/robotiq_2f_gripper_control/nodes/Robotiq2FGripperRtuNode.py"
     "/home/joe/sg_ws/src/robotiq/robotiq_2f_gripper_control/nodes/gripper_cmd_pub.py"
     "/home/joe/sg_ws/src/robotiq/robotiq_2f_gripper_control/nodes/gripper_pos_delay.py"
+    "/home/joe/sg_ws/src/robotiq/robotiq_2f_gripper_control/nodes/gripper_smooth.py"
     )
 endif()
 

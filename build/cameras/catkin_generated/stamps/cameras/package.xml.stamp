@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cameras</name>
+  <version>0.0.0</version>
+  <description>Package to to add delays</description>
+  <maintainer email="jl17783@bristol.ac.uk">joe louca</maintainer>
+  <license>TODO</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+
+  
+
+</package>

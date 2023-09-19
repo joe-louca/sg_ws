@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name ="l" default="0"/>
+	<param name="latency" type="double" value="$(eval arg('l'))" />
+		
+	<!-- Start up nodes to subscribe and add delay -->	
+	<node pkg="delays" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	
+	<node pkg="delays" type="topic_delay.py" name="DelayTPDistance" args="TPDistance"/>	
+	<node pkg="delays" type="topic_delay.py" name="DelayTPVelocity" args="TPVelocity"/>	
+	<node pkg="delays" type="topic_delay.py" name="DelayFingerJointAngles" args="FingerJointAngles"/>	
+	<node pkg="delays" type="topic_delay.py" name="DelayCamera" args="Camera"/>	
+		
+	<!-- Start up senseglove node -->
+	<node pkg="senseglove" type="senseglove_node" name="SenseGlove" output="screen"/>
+	
+	<!--Gripper Control-->
+	<node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperRtuNode.py" name="RobotiqGripper" args="/dev/ttyUSB0"/>	
+	
+	<!--Cameras-->
+	<node pkg="cameras" type="cam1.py" name="Camera1"/>	
+	
+
+
+</launch>

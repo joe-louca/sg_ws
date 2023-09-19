@@ -1,0 +1,8 @@
+prefix=/home/joe/sg_ws/install
+
+Name: fingertips
+Description: Description of fingertips
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs
