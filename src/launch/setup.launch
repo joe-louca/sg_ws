@@ -1,24 +1,56 @@
 <?xml version="1.0"?>
 <launch>
 	<arg name ="l" default="0"/>
+	<arg name ="p" default="0"/>
+	<arg name ="fb" default="0"/>
+	<arg name="practice" default="false"/>
 	<param name="latency" type="double" value="$(eval arg('l'))" />
-		
+	<param name="testing" type="bool" value="false"/>
+	<param name="refreshing_latency" type="bool" value="false"/>
+	<param name="participant" type="int" value="$(eval arg('p'))"/>
+	<param name="feedback" type="int" value="$(eval arg('fb'))"/>
+			
 	<!-- Start up nodes to subscribe and add delay -->	
-	<node pkg="delays" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	
-	<node pkg="delays" type="topic_delay.py" name="DelayTPDistance" args="TPDistance"/>	
-	<node pkg="delays" type="topic_delay.py" name="DelayTPVelocity" args="TPVelocity"/>	
-	<node pkg="delays" type="topic_delay.py" name="DelayFingerJointAngles" args="FingerJointAngles"/>	
-	<node pkg="delays" type="topic_delay.py" name="DelayCamera" args="Camera"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayTPDistance" args="TPDistance"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayTPVelocity" args="TPVelocity"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayFingerJointAngles" args="FingerJointAngles"/>	
+	<!--node pkg="delay" type="topic_delay.py" name="DelayCamera" args="Camera"/-->	
 		
 	<!-- Start up senseglove node -->
-	<node pkg="senseglove" type="senseglove_node" name="SenseGlove" output="screen"/>
+	<!--node pkg="senseglove" type="senseglove_node" name="SenseGlove" output="screen"/-->
 	
 	<!--Gripper Control-->
 	<node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperRtuNode.py" name="RobotiqGripper" args="/dev/ttyUSB0"/>	
 	
 	<!--Cameras-->
-	<node pkg="cameras" type="cam1.py" name="Camera1"/>	
+	<node pkg="cameras" type="cam1.py" name="Camera"/>	
 	
-
+	<!-- Robotiq commander -->
+	<node pkg="robotiq_2f_gripper_control" type="gripper_cmd_pub.py" name="RobotiqGripperCmd"/>
+	
+	<!--Feedback Type-->
+	<group if="$(eval fb == 0)">
+		<node pkg="fingertips" type="fingertip_contact_pub.py" name="FingertipSensors"/>
+		<param name="haptics_on" type="bool" value="false"/>
+	</group>
+	<group if="$(eval fb == 1)">
+		<node pkg="fingertips" type="fingertip_contact_pub.py" name="FingertipSensors"/>
+		<param name="haptics_on" type="bool" value="true"/>
+	</group>
+	<group if="$(eval fb == 2)">
+		<node pkg="fingertips" type="fingertip_contact_pub.py" name="FingertipSensors"/>
+		<node pkg="fingertips" type="VisualFeedback.py" name="VisualFeedback"/>
+		<param name="haptics_on" type="bool" value="false"/>
+	</group>
+	<group if="$(eval fb == 3)">
+		<node pkg="fingertips" type="fingertip_contact_pub.py" name="FingertipSensors"/>
+		<node pkg="fingertips" type="VisualFeedback.py" name="VisualFeedback"/>
+		<param name="haptics_on" type="bool" value="true"/>
+	</group>
+	
+	<group unless="$(arg practice)">
+		<node pkg="data_recording" type="record.py" name="DataRecording"/>
+	</group>
 
 </launch>

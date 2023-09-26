@@ -44,6 +44,7 @@ include_directories(
 catkin_install_python(PROGRAMS
   src/fingertip_contact_pub.py
   src/VisualFeedback.py
+  src/egg_pub.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 

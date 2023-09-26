@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Start up senseglove node -->
+	<node pkg="senseglove" type="senseglove_node" name="SenseGlove" output="screen"/>
+</launch>

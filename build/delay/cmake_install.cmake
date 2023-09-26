@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/joe/sg_ws/build/delay/catkin_generated/installspace/delays.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/joe/sg_ws/build/delay/catkin_generated/installspace/delay.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delays/cmake" TYPE FILE FILES
-    "/home/joe/sg_ws/build/delay/catkin_generated/installspace/delaysConfig.cmake"
-    "/home/joe/sg_ws/build/delay/catkin_generated/installspace/delaysConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delay/cmake" TYPE FILE FILES
+    "/home/joe/sg_ws/build/delay/catkin_generated/installspace/delayConfig.cmake"
+    "/home/joe/sg_ws/build/delay/catkin_generated/installspace/delayConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delays" TYPE FILE FILES "/home/joe/sg_ws/src/delay/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delay" TYPE FILE FILES "/home/joe/sg_ws/src/delay/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/delays" TYPE PROGRAM FILES "/home/joe/sg_ws/build/delay/catkin_generated/installspace/topic_delay.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/delay" TYPE PROGRAM FILES "/home/joe/sg_ws/build/delay/catkin_generated/installspace/topic_delay.py")
 endif()
 

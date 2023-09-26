@@ -35,7 +35,7 @@ class TOPIC_DELAY():
 
 
     def __init__(self, topic_name):
-        rospy.init_node(topic_name+'_DelayNode', anonymous=True)
+        rospy.init_node(topic_name+'_DelayNode', anonymous=False)
         self.checker = False
 
         # Prepare the publisher and subscriber, based on the topic        

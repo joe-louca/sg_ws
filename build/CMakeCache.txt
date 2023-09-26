@@ -409,14 +409,17 @@ catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
 
-//The directory containing a CMake configuration file for cv2.
-cv2_DIR:PATH=cv2_DIR-NOTFOUND
+//Value Computed by CMake
+data_recording_BINARY_DIR:STATIC=/home/joe/sg_ws/build/data_recording
 
 //Value Computed by CMake
-delays_BINARY_DIR:STATIC=/home/joe/sg_ws/build/delay
+data_recording_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/data_recording
 
 //Value Computed by CMake
-delays_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/delay
+delay_BINARY_DIR:STATIC=/home/joe/sg_ws/build/delay
+
+//Value Computed by CMake
+delay_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/delay
 
 //Value Computed by CMake
 fingertips_BINARY_DIR:STATIC=/home/joe/sg_ws/build/fingertips
@@ -779,7 +782,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=16
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

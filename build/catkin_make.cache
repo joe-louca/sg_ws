@@ -1,2 +1,2 @@
-cameras:delay:fingertips:launch:mujoco_menagerie:polaris:robotiq/robotiq_2f_gripper_control:robotiq/robotiq_ethercat:robotiq/robotiq_ft_sensor:robotiq/robotiq_modbus_rtu:robotiq/robotiq_modbus_tcp:senseglove
+cameras:data_recording:delay:fingertips:launch:mujoco_menagerie:polaris:robotiq/robotiq_2f_gripper_control:robotiq/robotiq_ethercat:robotiq/robotiq_ft_sensor:robotiq/robotiq_modbus_rtu:robotiq/robotiq_modbus_tcp:senseglove
 -DCATKIN_DEVEL_PREFIX=/home/joe/sg_ws/devel -DCMAKE_INSTALL_PREFIX=/home/joe/sg_ws/install -G Unix Makefiles

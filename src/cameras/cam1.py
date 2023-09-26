@@ -18,8 +18,8 @@ class CAMERAS:
         vid_capture = cv2.VideoCapture('/dev/video4')
         
         fps = 25.0
-        width = 1280
-        height = 720
+        width = 1280/2
+        height = 720/2
         
         vid_capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
         vid_capture.set(cv2.CAP_PROP_FRAME_WIDTH, width)
@@ -37,13 +37,36 @@ class CAMERAS:
         
         self.t0 = rospy.get_time()
         r = rospy.Rate(rate_hz)
+        frames = []
+
+        latency = rospy.get_param('latency')
+        latency = latency/2
         
+        start_time = time.time()
+
         # Read frames on a loop
         while not rospy.is_shutdown():
+            refreshing_latency = rospy.get_param('refreshing_latency')
+            if refreshing_latency:
+                latency = rospy.get_param('latency')
+                latency = latency/2
+                rospy.set_param('refreshing_latency', False)
+                start_time = time.time()
+            
             # Read the frame from the camera
             success, frame = vid_capture.read()
             
-            if success:                
+            if success:
+                frames.append(frame)
+
+                if time.time() - start_time > latency:
+                    delayed_frame = frames.pop(0)
+                    cv2.imshow("Gripper Cam", delayed_frame)
+                    pub.publish(bridge.cv2_to_imgmsg(delayed_frame, encoding="bgr8"))
+
+                key = cv2.waitKey(1)
+                if key == 27:
+                    break
                 # Write the frame to file
                 #output.write(both)
                     
@@ -53,7 +76,7 @@ class CAMERAS:
                 #    break               
 
                 # Publish the frame
-                pub.publish(bridge.cv2_to_imgmsg(frame, encoding="bgr8"))
+##                pub.publish(bridge.cv2_to_imgmsg(delayed_frame, encoding="bgr8"))
 
             # Sleep at fps rate
             r.sleep()

@@ -100,6 +100,9 @@ int main(int argc, char* argv[])
 	argv = NULL;
 	ros::init(argc, argv, "SenseGloveNova");
     ros::NodeHandle n;
+
+	bool haptics_on;
+	ros::param::get("/haptics_on", haptics_on);
 	// ros::Publisher F0_J0_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J0/Position", 1);
 	// ros::Publisher F0_J1_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J1/Position", 1);
 	// ros::Publisher F0_J2_Position_pub = n.advertise<geometry_msgs::PointStamped>("/F0/J2/Position", 1);
@@ -350,6 +353,7 @@ int main(int argc, char* argv[])
 
 			while (ros::ok())
 			{
+				ros::param::get("/haptics_on", haptics_on);
 				if (glove->GetHandPose(cachedProfile, handPose)) //returns the HandPose based on the latest device data, using the latest Profile and the default HandGeometry
 				{
 					wristP = SGCore::Kinematics::Vect3D::zero; //TODO; Get these off your tracker
@@ -428,15 +432,18 @@ int main(int argc, char* argv[])
 				}
 
 				// Subscribe to sensor readings for each finger and apply feedback
-				if (list.msg_received)
+				if (haptics_on)
 				{
-					//Force-Feedback Command
-					glove->SendHaptics(SGCore::Haptics::SG_FFBCmd(list.TH_force, list.F1_force, list.F2_force, list.F3_force, 0) );
-					
-					//Vibro Command
-					glove->SendHaptics(SGCore::Haptics::SG_BuzzCmd(list.TH_buzz, list.F1_buzz, list.F2_buzz, list.F3_buzz, 0) );
+					if (list.msg_received)
+					{
+						//Force-Feedback Command
+						glove->SendHaptics(SGCore::Haptics::SG_FFBCmd(list.TH_force, list.F1_force, list.F2_force, list.F3_force, 0) );
+						
+						//Vibro Command
+						glove->SendHaptics(SGCore::Haptics::SG_BuzzCmd(list.TH_buzz, list.F1_buzz, list.F2_buzz, list.F3_buzz, 0) );
 
-					//list.msg_received = false;
+						//list.msg_received = false;
+					}
 				}
 
 				// Spin ROS

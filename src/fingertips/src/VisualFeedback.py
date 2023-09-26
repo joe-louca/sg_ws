@@ -24,9 +24,9 @@ class VisualFB():
         self.rate_hz = 200
         r = rospy.Rate(self.rate_hz)
 
-        raw_img = cv2.imread('RobotiqSideProfile.png')
+        raw_img = cv2.imread('/home/joe/sg_ws/src/fingertips/src/RobotiqSideProfile.png')
         img_v = cv2.flip(raw_img, 0)
-        scale_percent = 40 # percent of original size
+        scale_percent = 20 # percent of original size
         width = int(img_v.shape[1] * scale_percent / 100)
         height = int(img_v.shape[0] * scale_percent / 100)
         dim = (width, height)
@@ -43,6 +43,10 @@ class VisualFB():
         start_R = (605-25, 570)
         end_R = (605, 745)
         
+        start_L = (110, 285)
+        end_L = (110+12, 372)
+        start_R = (290, 285)
+        end_R = (302, 372)        
         while not rospy.is_shutdown():
             img = resized
             #if force = 0, colour is white (255,255,255), if force = max, colour is red
