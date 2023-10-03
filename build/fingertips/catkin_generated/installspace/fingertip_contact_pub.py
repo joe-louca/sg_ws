@@ -32,7 +32,7 @@ def main():
             F1 = float(data_list[0])*20
             F2 = float(data_list[1])*20
             t = rospy.get_time() - t0
-            contact_msg.data = [F1, F2, 0, 0, 0, F1, F2, 0, 0, 0, t]
+            contact_msg.data = [F1, F2, 0, 0, 0, 0, 0, 0, 0, 0, t]
             pub.publish(contact_msg)
             
             egg = int(data_list[2])

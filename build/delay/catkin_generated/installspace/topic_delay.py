@@ -17,7 +17,7 @@ class TOPIC_DELAY():
         else:
             timestamped_msg = np.array([msg, t])
             self.delayed_tbl = np.vstack([self.delayed_tbl, timestamped_msg])
-        t_delay = t - self.latency
+        t_delay = t - self.latency/2
         
         # Find indexes for old rows
         if self.delayed_tbl.ndim != 1:

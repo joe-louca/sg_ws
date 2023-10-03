@@ -19,7 +19,7 @@ class VisualFB():
         self.F_R = 0
         
         # Prepare the publisher and subscriber, based on the topic        
-        sub = rospy.Subscriber('/FingerContacts', Float32MultiArray, self.callback, queue_size=1)
+        sub = rospy.Subscriber('/Delayed_FingerContacts', Float32MultiArray, self.callback, queue_size=1)
 
         self.rate_hz = 200
         r = rospy.Rate(self.rate_hz)

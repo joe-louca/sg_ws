@@ -1,0 +1,12 @@
+User study commands
+
+disconnect_sg
+connect_sg
+
+roscore
+
+# First, setup the senseglove on the user
+roslaunch launch SG.launch
+
+# Once set up, launch the experiment
+roslaunch launch setup.launch p:=0 fb:=0/1/2/3 (none/vibro/visual/vib+vis) [practice:=true]

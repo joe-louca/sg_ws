@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a library.
+BHAND_LIB:FILEPATH=/usr/local/lib/libBHand.so
+
+//The directory containing a CMake configuration file for BHand.
+BHand_DIR:PATH=BHand_DIR-NOTFOUND
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
@@ -380,6 +386,9 @@ UBUNTU:BOOL=TRUE
 UBUNTU_FOCAL:BOOL=TRUE
 
 //Path to a file.
+_file_name:FILEPATH=/home/joe/sg_ws/src/allegro-hand-ros-master/allegro_hand/test/allegro_launch.test
+
+//Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/src/googletest/googlemock/include/gmock/gmock.h
 
 //Path to a file.
@@ -391,11 +400,68 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//Path to a file.
+_path_name:FILEPATH=/home/joe/sg_ws/src/allegro-hand-ros-master/allegro_hand/src/allegro_hand
+
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/noetic/share/actionlib/cmake
 
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
+
+//Value Computed by CMake
+allegro_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro
+
+//Value Computed by CMake
+allegro_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro
+
+//Value Computed by CMake
+allegro_hand_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro_hand_ros_v4/src/allegro_hand
+
+//Value Computed by CMake
+allegro_hand_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro_hand_ros_v4/src/allegro_hand
+
+//Value Computed by CMake
+allegro_hand_controllers_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro_hand_ros_v4/src/allegro_hand_controllers
+
+//Value Computed by CMake
+allegro_hand_controllers_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro_hand_ros_v4/src/allegro_hand_controllers
+
+//Value Computed by CMake
+allegro_hand_description_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro_hand_ros_v4/src/allegro_hand_description
+
+//Value Computed by CMake
+allegro_hand_description_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro_hand_ros_v4/src/allegro_hand_description
+
+//Value Computed by CMake
+allegro_hand_driver_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro_hand_ros_v4/src/allegro_hand_driver
+
+//The directory containing a CMake configuration file for allegro_hand_driver.
+allegro_hand_driver_DIR:PATH=/home/joe/sg_ws/devel/share/allegro_hand_driver/cmake
+
+//Value Computed by CMake
+allegro_hand_driver_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro_hand_ros_v4/src/allegro_hand_driver
+
+//Value Computed by CMake
+allegro_hand_keyboard_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro_hand_ros_v4/src/allegro_hand_keyboard
+
+//Value Computed by CMake
+allegro_hand_keyboard_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro_hand_ros_v4/src/allegro_hand_keyboard
+
+//Value Computed by CMake
+allegro_hand_parameters_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro_hand_ros_v4/src/allegro_hand_parameters
+
+//Value Computed by CMake
+allegro_hand_parameters_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro_hand_ros_v4/src/allegro_hand_parameters
+
+//Value Computed by CMake
+bhand_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro_hand_ros_v4/src/bhand
+
+//The directory containing a CMake configuration file for bhand.
+bhand_DIR:PATH=/home/joe/sg_ws/devel/share/bhand/cmake
+
+//Value Computed by CMake
+bhand_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro_hand_ros_v4/src/bhand
 
 //Value Computed by CMake
 cameras_BINARY_DIR:STATIC=/home/joe/sg_ws/build/cameras
@@ -420,6 +486,12 @@ delay_BINARY_DIR:STATIC=/home/joe/sg_ws/build/delay
 
 //Value Computed by CMake
 delay_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/delay
+
+//Value Computed by CMake
+epfl_allegro_launchers_BINARY_DIR:STATIC=/home/joe/sg_ws/build/allegro-hand-ros-master/epfl_allegro_launchers
+
+//Value Computed by CMake
+epfl_allegro_launchers_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/allegro-hand-ros-master/epfl_allegro_launchers
 
 //Value Computed by CMake
 fingertips_BINARY_DIR:STATIC=/home/joe/sg_ws/build/fingertips
@@ -503,6 +575,9 @@ launch_SOURCE_DIR:STATIC=/home/joe/sg_ws/src/launch
 //Path to a library.
 lib:FILEPATH=/usr/lib/liborocos-kdl.so
 
+//The directory containing a CMake configuration file for libpcan.
+libpcan_DIR:PATH=/opt/ros/noetic/share/libpcan/cmake
+
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/noetic/share/message_filters/cmake
 
@@ -529,6 +604,9 @@ object_recognition_msgs_DIR:PATH=/opt/ros/noetic/share/object_recognition_msgs/c
 
 //The directory containing a CMake configuration file for octomap_msgs.
 octomap_msgs_DIR:PATH=/opt/ros/noetic/share/octomap_msgs/cmake
+
+//The directory containing a CMake configuration file for pcanbasic.
+pcanbasic_DIR:PATH=pcanbasic_DIR-NOTFOUND
 
 //Value Computed by CMake
 polaris_BINARY_DIR:STATIC=/home/joe/sg_ws/build/polaris
@@ -589,6 +667,9 @@ rosgraph_msgs_DIR:PATH=/opt/ros/noetic/share/rosgraph_msgs/cmake
 
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/noetic/share/rospy/cmake
+
+//The directory containing a CMake configuration file for rostest.
+rostest_DIR:PATH=/opt/ros/noetic/share/rostest/cmake
 
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
@@ -782,7 +863,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=24
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

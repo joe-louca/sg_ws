@@ -54,6 +54,11 @@ CMAKE_BINARY_DIR = /home/joe/sg_ws/build
 
 # The main recursive "all" target.
 all: gtest/all
+all: allegro_hand_ros_v4/src/allegro_hand_description/all
+all: allegro_hand_ros_v4/src/allegro_hand_parameters/all
+all: allegro_hand_ros_v4/src/bhand/all
+all: allegro_hand_ros_v4/src/allegro_hand_driver/all
+all: allegro_hand_ros_v4/src/allegro_hand_keyboard/all
 all: data_recording/all
 all: delay/all
 all: fingertips/all
@@ -65,6 +70,8 @@ all: robotiq/robotiq_2f_gripper_control/all
 all: robotiq/robotiq_ft_sensor/all
 all: robotiq/robotiq_modbus_rtu/all
 all: robotiq/robotiq_modbus_tcp/all
+all: allegro_hand_ros_v4/src/allegro_hand/all
+all: allegro_hand_ros_v4/src/allegro_hand_controllers/all
 all: cameras/all
 all: senseglove/all
 
@@ -72,6 +79,11 @@ all: senseglove/all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
+preinstall: allegro_hand_ros_v4/src/allegro_hand_description/preinstall
+preinstall: allegro_hand_ros_v4/src/allegro_hand_parameters/preinstall
+preinstall: allegro_hand_ros_v4/src/bhand/preinstall
+preinstall: allegro_hand_ros_v4/src/allegro_hand_driver/preinstall
+preinstall: allegro_hand_ros_v4/src/allegro_hand_keyboard/preinstall
 preinstall: data_recording/preinstall
 preinstall: delay/preinstall
 preinstall: fingertips/preinstall
@@ -83,6 +95,8 @@ preinstall: robotiq/robotiq_2f_gripper_control/preinstall
 preinstall: robotiq/robotiq_ft_sensor/preinstall
 preinstall: robotiq/robotiq_modbus_rtu/preinstall
 preinstall: robotiq/robotiq_modbus_tcp/preinstall
+preinstall: allegro_hand_ros_v4/src/allegro_hand/preinstall
+preinstall: allegro_hand_ros_v4/src/allegro_hand_controllers/preinstall
 preinstall: cameras/preinstall
 preinstall: senseglove/preinstall
 
@@ -95,6 +109,11 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
+clean: allegro_hand_ros_v4/src/allegro_hand_description/clean
+clean: allegro_hand_ros_v4/src/allegro_hand_parameters/clean
+clean: allegro_hand_ros_v4/src/bhand/clean
+clean: allegro_hand_ros_v4/src/allegro_hand_driver/clean
+clean: allegro_hand_ros_v4/src/allegro_hand_keyboard/clean
 clean: data_recording/clean
 clean: delay/clean
 clean: fingertips/clean
@@ -106,10 +125,169 @@ clean: robotiq/robotiq_2f_gripper_control/clean
 clean: robotiq/robotiq_ft_sensor/clean
 clean: robotiq/robotiq_modbus_rtu/clean
 clean: robotiq/robotiq_modbus_tcp/clean
+clean: allegro_hand_ros_v4/src/allegro_hand/clean
+clean: allegro_hand_ros_v4/src/allegro_hand_controllers/clean
 clean: cameras/clean
 clean: senseglove/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory allegro_hand_ros_v4/src/allegro_hand
+
+# Recursive "all" directory target.
+allegro_hand_ros_v4/src/allegro_hand/all: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/all
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/all
+
+# Recursive "preinstall" directory target.
+allegro_hand_ros_v4/src/allegro_hand/preinstall:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/preinstall
+
+# Recursive "clean" directory target.
+allegro_hand_ros_v4/src/allegro_hand/clean: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/clean: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/clean: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/clean: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/clean: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/clean: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/clean
+
+#=============================================================================
+# Directory level rules for directory allegro_hand_ros_v4/src/allegro_hand_controllers
+
+# Recursive "all" directory target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/all
+
+# Recursive "preinstall" directory target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/preinstall:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/preinstall
+
+# Recursive "clean" directory target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/clean: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_controllers/clean: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_controllers/clean: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_controllers/clean: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_controllers/clean: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_controllers/clean: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/clean
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/clean
+
+#=============================================================================
+# Directory level rules for directory allegro_hand_ros_v4/src/allegro_hand_description
+
+# Recursive "all" directory target.
+allegro_hand_ros_v4/src/allegro_hand_description/all:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_description/all
+
+# Recursive "preinstall" directory target.
+allegro_hand_ros_v4/src/allegro_hand_description/preinstall:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_description/preinstall
+
+# Recursive "clean" directory target.
+allegro_hand_ros_v4/src/allegro_hand_description/clean: allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_description/clean
+
+#=============================================================================
+# Directory level rules for directory allegro_hand_ros_v4/src/allegro_hand_driver
+
+# Recursive "all" directory target.
+allegro_hand_ros_v4/src/allegro_hand_driver/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/all
+
+# Recursive "preinstall" directory target.
+allegro_hand_ros_v4/src/allegro_hand_driver/preinstall:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/preinstall
+
+# Recursive "clean" directory target.
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/clean: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/clean
+
+#=============================================================================
+# Directory level rules for directory allegro_hand_ros_v4/src/allegro_hand_keyboard
+
+# Recursive "all" directory target.
+allegro_hand_ros_v4/src/allegro_hand_keyboard/all: allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/all
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_keyboard/all
+
+# Recursive "preinstall" directory target.
+allegro_hand_ros_v4/src/allegro_hand_keyboard/preinstall:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_keyboard/preinstall
+
+# Recursive "clean" directory target.
+allegro_hand_ros_v4/src/allegro_hand_keyboard/clean: allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/clean
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_keyboard/clean
+
+#=============================================================================
+# Directory level rules for directory allegro_hand_ros_v4/src/allegro_hand_parameters
+
+# Recursive "all" directory target.
+allegro_hand_ros_v4/src/allegro_hand_parameters/all:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_parameters/all
+
+# Recursive "preinstall" directory target.
+allegro_hand_ros_v4/src/allegro_hand_parameters/preinstall:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_parameters/preinstall
+
+# Recursive "clean" directory target.
+allegro_hand_ros_v4/src/allegro_hand_parameters/clean:
+
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_parameters/clean
+
+#=============================================================================
+# Directory level rules for directory allegro_hand_ros_v4/src/bhand
+
+# Recursive "all" directory target.
+allegro_hand_ros_v4/src/bhand/all: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+
+.PHONY : allegro_hand_ros_v4/src/bhand/all
+
+# Recursive "preinstall" directory target.
+allegro_hand_ros_v4/src/bhand/preinstall:
+
+.PHONY : allegro_hand_ros_v4/src/bhand/preinstall
+
+# Recursive "clean" directory target.
+allegro_hand_ros_v4/src/bhand/clean: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/clean
+
+.PHONY : allegro_hand_ros_v4/src/bhand/clean
 
 #=============================================================================
 # Directory level rules for directory cameras
@@ -125,11 +303,7 @@ cameras/preinstall:
 .PHONY : cameras/preinstall
 
 # Recursive "clean" directory target.
-cameras/clean: cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-cameras/clean: cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-cameras/clean: cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-cameras/clean: cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-cameras/clean: cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+cameras/clean:
 
 .PHONY : cameras/clean
 
@@ -147,21 +321,7 @@ data_recording/preinstall:
 .PHONY : data_recording/preinstall
 
 # Recursive "clean" directory target.
-data_recording/clean: data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-data_recording/clean: data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-data_recording/clean: data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-data_recording/clean: data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-data_recording/clean: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-data_recording/clean: data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-data_recording/clean: data_recording/CMakeFiles/roscpp_generate_messages_py.dir/clean
-data_recording/clean: data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-data_recording/clean: data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-data_recording/clean: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-data_recording/clean: data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-data_recording/clean: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-data_recording/clean: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-data_recording/clean: data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-data_recording/clean: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+data_recording/clean:
 
 .PHONY : data_recording/clean
 
@@ -276,7 +436,7 @@ launch/preinstall:
 .PHONY : launch/preinstall
 
 # Recursive "clean" directory target.
-launch/clean: launch/CMakeFiles/_catkin_empty_exported_target.dir/clean
+launch/clean:
 
 .PHONY : launch/clean
 
@@ -637,7 +797,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmoc
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=3,4 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=23,24 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -664,7 +824,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=1,2 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=21,22 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -691,7 +851,7 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=7,8 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=27,28 "Built target gtest_main"
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -718,7 +878,7 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 gtest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=5,6 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=25,26 "Built target gtest"
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -739,409 +899,544 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/std_msgs_generate_messages_py.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/all
+allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/build.make allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/build.make allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+_catkin_empty_exported_target: allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/build.make allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/build.make allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/build.make allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=1 "Built target BHand"
+.PHONY : allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/rule
+
+# Convenience name for target.
+BHand: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/rule
+
+.PHONY : BHand
+
+# clean rule for target.
+allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/build.make allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/clean
+.PHONY : allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=2,3,4 "Built target allegro_hand_driver"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/rule
+
+# Convenience name for target.
+allegro_hand_driver: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/rule
+
+.PHONY : allegro_hand_driver
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 .PHONY : std_msgs_generate_messages_py
 
 # clean rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+std_msgs_generate_messages_nodejs: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 .PHONY : std_msgs_generate_messages_nodejs
 
 # clean rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# clean rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target data_recording/CMakeFiles/roscpp_generate_messages_eus.dir
-
-# All Build rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# clean rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# clean rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+std_msgs_generate_messages_lisp: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 .PHONY : std_msgs_generate_messages_lisp
 
 # clean rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/roscpp_generate_messages_py.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_py.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_py.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_py.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_py.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_py.dir/all
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target EP_libpcan"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/roscpp_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: data_recording/CMakeFiles/roscpp_generate_messages_py.dir/rule
+EP_libpcan: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/rule
+
+.PHONY : EP_libpcan
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 .PHONY : roscpp_generate_messages_py
 
 # clean rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_py.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_py.dir/clean
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_py.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+std_msgs_generate_messages_eus: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 .PHONY : std_msgs_generate_messages_eus
 
 # clean rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+roscpp_generate_messages_nodejs: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 .PHONY : roscpp_generate_messages_nodejs
 
 # clean rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+rosgraph_msgs_generate_messages_cpp: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_cpp
 
 # clean rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+std_msgs_generate_messages_cpp: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 .PHONY : std_msgs_generate_messages_cpp
 
 # clean rule for target.
-data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-.PHONY : data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+rosgraph_msgs_generate_messages_eus: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_eus
 
 # clean rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+rosgraph_msgs_generate_messages_lisp: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_lisp
 
 # clean rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+roscpp_generate_messages_lisp: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 .PHONY : roscpp_generate_messages_lisp
 
 # clean rule for target.
-data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-.PHONY : data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
 
 # All Build rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+rosgraph_msgs_generate_messages_py: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 .PHONY : rosgraph_msgs_generate_messages_py
 
 # clean rule for target.
-data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-.PHONY : data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/build.make allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/build.make allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=5,6 "Built target allegro_hand_keyboard"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/rule
+
+# Convenience name for target.
+allegro_hand_keyboard: allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/rule
+
+.PHONY : allegro_hand_keyboard
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/build.make allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/clean
 
 #=============================================================================
 # Target rules for target delay/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
@@ -1279,40 +1574,13 @@ delay/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
 .PHONY : delay/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target launch/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-launch/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f launch/CMakeFiles/_catkin_empty_exported_target.dir/build.make launch/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f launch/CMakeFiles/_catkin_empty_exported_target.dir/build.make launch/CMakeFiles/_catkin_empty_exported_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : launch/CMakeFiles/_catkin_empty_exported_target.dir/all
-
-# Build rule for subdir invocation for target.
-launch/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 launch/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : launch/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: launch/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# clean rule for target.
-launch/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f launch/CMakeFiles/_catkin_empty_exported_target.dir/build.make launch/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : launch/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-#=============================================================================
 # Target rules for target robotiq/robotiq_ethercat/CMakeFiles/robotiq_ethercat.dir
 
 # All Build rule for target.
 robotiq/robotiq_ethercat/CMakeFiles/robotiq_ethercat.dir/all:
 	$(MAKE) -f robotiq/robotiq_ethercat/CMakeFiles/robotiq_ethercat.dir/build.make robotiq/robotiq_ethercat/CMakeFiles/robotiq_ethercat.dir/depend
 	$(MAKE) -f robotiq/robotiq_ethercat/CMakeFiles/robotiq_ethercat.dir/build.make robotiq/robotiq_ethercat/CMakeFiles/robotiq_ethercat.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=24,25 "Built target robotiq_ethercat"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=44,45 "Built target robotiq_ethercat"
 .PHONY : robotiq/robotiq_ethercat/CMakeFiles/robotiq_ethercat.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1452,7 +1720,7 @@ robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generat
 robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_py.dir/all: robotiq/robotiq_2f_gripper_control/CMakeFiles/_robotiq_2f_gripper_control_generate_messages_check_deps_Robotiq2FGripper_robot_output.dir/all
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_py.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_py.dir/depend
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_py.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=18,19,20 "Built target robotiq_2f_gripper_control_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=38,39,40 "Built target robotiq_2f_gripper_control_generate_messages_py"
 .PHONY : robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1480,7 +1748,7 @@ robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generat
 robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_cpp.dir/all: robotiq/robotiq_2f_gripper_control/CMakeFiles/_robotiq_2f_gripper_control_generate_messages_check_deps_Robotiq2FGripper_robot_output.dir/all
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_cpp.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_cpp.dir/depend
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_cpp.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=9,10 "Built target robotiq_2f_gripper_control_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=29,30 "Built target robotiq_2f_gripper_control_generate_messages_cpp"
 .PHONY : robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1508,7 +1776,7 @@ robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generat
 robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_eus.dir/all: robotiq/robotiq_2f_gripper_control/CMakeFiles/_robotiq_2f_gripper_control_generate_messages_check_deps_Robotiq2FGripper_robot_output.dir/all
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_eus.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_eus.dir/depend
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_eus.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=11,12,13 "Built target robotiq_2f_gripper_control_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=31,32,33 "Built target robotiq_2f_gripper_control_generate_messages_eus"
 .PHONY : robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1590,7 +1858,7 @@ robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generat
 robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_nodejs.dir/all: robotiq/robotiq_2f_gripper_control/CMakeFiles/_robotiq_2f_gripper_control_generate_messages_check_deps_Robotiq2FGripper_robot_output.dir/all
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_nodejs.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_nodejs.dir/depend
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_nodejs.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=16,17 "Built target robotiq_2f_gripper_control_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=36,37 "Built target robotiq_2f_gripper_control_generate_messages_nodejs"
 .PHONY : robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1618,7 +1886,7 @@ robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generat
 robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_lisp.dir/all: robotiq/robotiq_2f_gripper_control/CMakeFiles/_robotiq_2f_gripper_control_generate_messages_check_deps_Robotiq2FGripper_robot_output.dir/all
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_lisp.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_lisp.dir/depend
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_lisp.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=14,15 "Built target robotiq_2f_gripper_control_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=34,35 "Built target robotiq_2f_gripper_control_generate_messages_lisp"
 .PHONY : robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1673,7 +1941,7 @@ robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_ethercat_node.d
 robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_ethercat_node.dir/all: robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_generate_messages_cpp.dir/all
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_ethercat_node.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_ethercat_node.dir/depend
 	$(MAKE) -f robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_ethercat_node.dir/build.make robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_ethercat_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=21,22,23 "Built target robotiq_2f_gripper_ethercat_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=41,42,43 "Built target robotiq_2f_gripper_ethercat_node"
 .PHONY : robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_ethercat_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1724,25 +1992,25 @@ robotiq/robotiq_2f_gripper_control/CMakeFiles/robotiq_2f_gripper_control_gennode
 # Target rules for target robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir
 
 # All Build rule for target.
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_py.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_gencpp.dir/all
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/depend
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=43,44 "Built target rq_test_sensor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=63,64 "Built target rq_test_sensor"
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/rq_test_sensor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1851,25 +2119,25 @@ robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_
 # Target rules for target robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir
 
 # All Build rule for target.
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_py.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_gencpp.dir/all
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/depend
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=39,40,41,42 "Built target rq_sensor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=59,60,61,62 "Built target rq_sensor"
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1893,12 +2161,12 @@ robotiq/robotiq_ft_sensor/CMakeFiles/rq_sensor.dir/clean:
 # Target rules for target robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir
 
 # All Build rule for target.
-robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_sensor_accessor.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_ft_sensor.dir/all
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/depend
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=26,27 "Built target robotiq_ft_sensor_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=46,47 "Built target robotiq_ft_sensor_generate_messages_cpp"
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2003,12 +2271,12 @@ robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_gennodejs.dir/clean:
 # Target rules for target robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir
 
 # All Build rule for target.
-robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_sensor_accessor.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_ft_sensor.dir/all
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/depend
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=28,29,30 "Built target robotiq_ft_sensor_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=48,49,50 "Built target robotiq_ft_sensor_generate_messages_eus"
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2059,12 +2327,12 @@ robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_geneus.dir/clean:
 # Target rules for target robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir
 
 # All Build rule for target.
-robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_sensor_accessor.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_ft_sensor.dir/all
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/depend
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=31,32 "Built target robotiq_ft_sensor_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=51,52 "Built target robotiq_ft_sensor_generate_messages_lisp"
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2088,12 +2356,12 @@ robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_lisp.di
 # Target rules for target robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir
 
 # All Build rule for target.
-robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_sensor_accessor.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_ft_sensor.dir/all
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/depend
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=33,34 "Built target robotiq_ft_sensor_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=53,54 "Built target robotiq_ft_sensor_generate_messages_nodejs"
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2144,12 +2412,12 @@ robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_genlisp.dir/clean:
 # Target rules for target robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir
 
 # All Build rule for target.
-robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/all
+robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_sensor_accessor.dir/all
 robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/all: robotiq/robotiq_ft_sensor/CMakeFiles/_robotiq_ft_sensor_generate_messages_check_deps_ft_sensor.dir/all
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/depend
 	$(MAKE) -f robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/build.make robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=35,36,37,38 "Built target robotiq_ft_sensor_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=55,56,57,58 "Built target robotiq_ft_sensor_generate_messages_py"
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2170,169 +2438,369 @@ robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/
 .PHONY : robotiq/robotiq_ft_sensor/CMakeFiles/robotiq_ft_sensor_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir
 
 # All Build rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_py: cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+sensor_msgs_generate_messages_py: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 .PHONY : sensor_msgs_generate_messages_py
 
 # clean rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
-# Target rules for target cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_nodejs: cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+sensor_msgs_generate_messages_nodejs: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 .PHONY : sensor_msgs_generate_messages_nodejs
 
 # clean rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
-# Target rules for target cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir
 
 # All Build rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/all: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=7,8 "Built target allegro_hand_uname"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/all
 
 # Build rule for subdir invocation for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_lisp: cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+allegro_hand_uname: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/rule
+
+.PHONY : allegro_hand_uname
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 .PHONY : sensor_msgs_generate_messages_lisp
 
 # clean rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_eus: cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+sensor_msgs_generate_messages_eus: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 .PHONY : sensor_msgs_generate_messages_eus
 
 # clean rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 
 #=============================================================================
-# Target rules for target cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_cpp: cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+sensor_msgs_generate_messages_cpp: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 .PHONY : sensor_msgs_generate_messages_cpp
 
 # clean rule for target.
-cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-.PHONY : cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/all: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=19,20 "Built target allegro_node_velsat"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/rule
+
+# Convenience name for target.
+allegro_node_velsat: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/rule
+
+.PHONY : allegro_node_velsat
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/all: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=15,16 "Built target allegro_node_sim"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/rule
+
+# Convenience name for target.
+allegro_node_sim: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/rule
+
+.PHONY : allegro_node_sim
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/all: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=17,18 "Built target allegro_node_torque"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/rule
+
+# Convenience name for target.
+allegro_node_torque: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/rule
+
+.PHONY : allegro_node_torque
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/all: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=11,12 "Built target allegro_node_grasp"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/rule
+
+# Convenience name for target.
+allegro_node_grasp: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/rule
+
+.PHONY : allegro_node_grasp
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/all: allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/all
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/all: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=13,14 "Built target allegro_node_pd"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/rule
+
+# Convenience name for target.
+allegro_node_pd: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/rule
+
+.PHONY : allegro_node_pd
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/clean
+
+#=============================================================================
+# Target rules for target allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir
+
+# All Build rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/depend
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=9,10 "Built target allegro_node"
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+
+# Build rule for subdir invocation for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/sg_ws/build/CMakeFiles 0
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/rule
+
+# Convenience name for target.
+allegro_node: allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/rule
+
+.PHONY : allegro_node
+
+# clean rule for target.
+allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/clean:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/clean
+.PHONY : allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/clean
 
 #=============================================================================
 # Target rules for target senseglove/CMakeFiles/senseglove_node.dir
 
 # All Build rule for target.
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_py.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: delay/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: delay/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: delay/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: delay/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: delay/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-senseglove/CMakeFiles/senseglove_node.dir/all: cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+senseglove/CMakeFiles/senseglove_node.dir/all: allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: senseglove/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: senseglove/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 senseglove/CMakeFiles/senseglove_node.dir/all: senseglove/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
@@ -2375,7 +2843,7 @@ senseglove/CMakeFiles/senseglove_node.dir/all: senseglove/CMakeFiles/octomap_msg
 senseglove/CMakeFiles/senseglove_node.dir/all: senseglove/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f senseglove/CMakeFiles/senseglove_node.dir/build.make senseglove/CMakeFiles/senseglove_node.dir/depend
 	$(MAKE) -f senseglove/CMakeFiles/senseglove_node.dir/build.make senseglove/CMakeFiles/senseglove_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=45,46 "Built target senseglove_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joe/sg_ws/build/CMakeFiles --progress-num=65,66 "Built target senseglove_node"
 .PHONY : senseglove/CMakeFiles/senseglove_node.dir/all
 
 # Build rule for subdir invocation for target.

@@ -15,7 +15,7 @@ class CAMERAS:
         rate_hz = 25
         
         # Set up video captures
-        vid_capture = cv2.VideoCapture('/dev/video4')
+        vid_capture = cv2.VideoCapture('/dev/video0')
         
         fps = 25.0
         width = 1280/2

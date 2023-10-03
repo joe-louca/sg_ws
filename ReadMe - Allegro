@@ -1,0 +1,4 @@
+Change /home/joe/sg_ws/src/allegro_hand_ros_v4/src/allegro_hand_controllers/src/allegro_node_grasp.cpp
+
+roslaunch allegro_hand_controllers allegro_hand.launch VISUALIZE:=false HAND:=right CONTROLLER:=grasp
+

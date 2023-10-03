@@ -285,6 +285,45 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named _catkin_empty_exported_target
+
+# Build rule for target.
+_catkin_empty_exported_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/build.make allegro_hand_ros_v4/src/allegro_hand_description/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
+
+#=============================================================================
+# Target rules for targets named BHand
+
+# Build rule for target.
+BHand: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BHand
+.PHONY : BHand
+
+# fast build rule for target.
+BHand/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/build.make allegro_hand_ros_v4/src/bhand/CMakeFiles/BHand.dir/build
+.PHONY : BHand/fast
+
+#=============================================================================
+# Target rules for targets named allegro_hand_driver
+
+# Build rule for target.
+allegro_hand_driver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_driver
+.PHONY : allegro_hand_driver
+
+# fast build rule for target.
+allegro_hand_driver/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/allegro_hand_driver.dir/build
+.PHONY : allegro_hand_driver/fast
+
+#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
 
 # Build rule for target.
@@ -294,7 +333,7 @@ std_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -307,8 +346,34 @@ std_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_lisp
+
+# Build rule for target.
+std_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named EP_libpcan
+
+# Build rule for target.
+EP_libpcan: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EP_libpcan
+.PHONY : EP_libpcan
+
+# fast build rule for target.
+EP_libpcan/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/EP_libpcan.dir/build
+.PHONY : EP_libpcan/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
@@ -320,7 +385,7 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
@@ -333,7 +398,7 @@ roscpp_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
@@ -346,21 +411,8 @@ rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named std_msgs_generate_messages_lisp
-
-# Build rule for target.
-std_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_py
@@ -372,7 +424,7 @@ roscpp_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_py.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_py.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
@@ -385,7 +437,7 @@ std_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -398,7 +450,7 @@ roscpp_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -411,7 +463,7 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -424,7 +476,7 @@ std_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make data_recording/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -437,7 +489,7 @@ rosgraph_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -450,7 +502,7 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -463,7 +515,7 @@ roscpp_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make data_recording/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
@@ -476,8 +528,21 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make data_recording/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand_driver/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named allegro_hand_keyboard
+
+# Build rule for target.
+allegro_hand_keyboard: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_keyboard
+.PHONY : allegro_hand_keyboard
+
+# fast build rule for target.
+allegro_hand_keyboard/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/build.make allegro_hand_ros_v4/src/allegro_hand_keyboard/CMakeFiles/allegro_hand_keyboard.dir/build
+.PHONY : allegro_hand_keyboard/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_nodejs
@@ -543,19 +608,6 @@ geometry_msgs_generate_messages_cpp: cmake_check_build_system
 geometry_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f delay/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make delay/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named _catkin_empty_exported_target
-
-# Build rule for target.
-_catkin_empty_exported_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	$(MAKE) -f launch/CMakeFiles/_catkin_empty_exported_target.dir/build.make launch/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
 # Target rules for targets named robotiq_ethercat
@@ -957,7 +1009,7 @@ sensor_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -970,8 +1022,21 @@ sensor_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named allegro_hand_uname
+
+# Build rule for target.
+allegro_hand_uname: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_hand_uname
+.PHONY : allegro_hand_uname
+
+# fast build rule for target.
+allegro_hand_uname/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/allegro_hand_uname.dir/build
+.PHONY : allegro_hand_uname/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_lisp
@@ -983,7 +1048,7 @@ sensor_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -996,7 +1061,7 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -1009,8 +1074,86 @@ sensor_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make cameras/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make allegro_hand_ros_v4/src/allegro_hand/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named allegro_node_velsat
+
+# Build rule for target.
+allegro_node_velsat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_node_velsat
+.PHONY : allegro_node_velsat
+
+# fast build rule for target.
+allegro_node_velsat/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_velsat.dir/build
+.PHONY : allegro_node_velsat/fast
+
+#=============================================================================
+# Target rules for targets named allegro_node_sim
+
+# Build rule for target.
+allegro_node_sim: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_node_sim
+.PHONY : allegro_node_sim
+
+# fast build rule for target.
+allegro_node_sim/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_sim.dir/build
+.PHONY : allegro_node_sim/fast
+
+#=============================================================================
+# Target rules for targets named allegro_node_torque
+
+# Build rule for target.
+allegro_node_torque: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_node_torque
+.PHONY : allegro_node_torque
+
+# fast build rule for target.
+allegro_node_torque/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_torque.dir/build
+.PHONY : allegro_node_torque/fast
+
+#=============================================================================
+# Target rules for targets named allegro_node_grasp
+
+# Build rule for target.
+allegro_node_grasp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_node_grasp
+.PHONY : allegro_node_grasp
+
+# fast build rule for target.
+allegro_node_grasp/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_grasp.dir/build
+.PHONY : allegro_node_grasp/fast
+
+#=============================================================================
+# Target rules for targets named allegro_node_pd
+
+# Build rule for target.
+allegro_node_pd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_node_pd
+.PHONY : allegro_node_pd
+
+# fast build rule for target.
+allegro_node_pd/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node_pd.dir/build
+.PHONY : allegro_node_pd/fast
+
+#=============================================================================
+# Target rules for targets named allegro_node
+
+# Build rule for target.
+allegro_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allegro_node
+.PHONY : allegro_node
+
+# fast build rule for target.
+allegro_node/fast:
+	$(MAKE) -f allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/build.make allegro_hand_ros_v4/src/allegro_hand_controllers/CMakeFiles/allegro_node.dir/build
+.PHONY : allegro_node/fast
 
 #=============================================================================
 # Target rules for targets named senseglove_node
@@ -1567,12 +1710,16 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... BHand"
+	@echo "... allegro_hand_driver"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... EP_libpcan"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -1582,12 +1729,12 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... allegro_hand_keyboard"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... robotiq_ethercat"
 	@echo "... robotiq_2f_gripper_control_generate_messages"
 	@echo "... robotiq_2f_gripper_control_gencpp"
@@ -1620,9 +1767,16 @@ help:
 	@echo "... robotiq_ft_sensor_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... allegro_hand_uname"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... allegro_node_velsat"
+	@echo "... allegro_node_sim"
+	@echo "... allegro_node_torque"
+	@echo "... allegro_node_grasp"
+	@echo "... allegro_node_pd"
+	@echo "... allegro_node"
 	@echo "... senseglove_node"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_eus"

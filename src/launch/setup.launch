@@ -11,10 +11,10 @@
 	<param name="feedback" type="int" value="$(eval arg('fb'))"/>
 			
 	<!-- Start up nodes to subscribe and add delay -->	
-	<node pkg="delay" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	
+	<!--node pkg="delay" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	
 	<node pkg="delay" type="topic_delay.py" name="DelayTPDistance" args="TPDistance"/>	
 	<node pkg="delay" type="topic_delay.py" name="DelayTPVelocity" args="TPVelocity"/>	
-	<node pkg="delay" type="topic_delay.py" name="DelayFingerJointAngles" args="FingerJointAngles"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayFingerJointAngles" args="FingerJointAngles"/-->	
 	<!--node pkg="delay" type="topic_delay.py" name="DelayCamera" args="Camera"/-->	
 		
 	<!-- Start up senseglove node -->
@@ -24,7 +24,7 @@
 	<node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperRtuNode.py" name="RobotiqGripper" args="/dev/ttyUSB0"/>	
 	
 	<!--Cameras-->
-	<node pkg="cameras" type="cam1.py" name="Camera"/>	
+	<!--node pkg="cameras" type="cam1.py" name="Camera"/-->	
 	
 	<!-- Robotiq commander -->
 	<node pkg="robotiq_2f_gripper_control" type="gripper_cmd_pub.py" name="RobotiqGripperCmd"/>
@@ -53,4 +53,6 @@
 		<node pkg="data_recording" type="record.py" name="DataRecording"/>
 	</group>
 
+
+	<node pkg="launch" type="launch_kuka.sh" name="KUKA" output="screen" />
 </launch>

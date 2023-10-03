@@ -47,11 +47,14 @@ class DATA():
             r = rospy.Rate(self.rate_hz)
 
             
-            while not rospy.is_shutdown():
+            while not rospy.is_shutdown():                    
                 t = time.time() - start_time
                 data = [t, self.F_L, self.F_R, self.GRIP, self.EGG]
                 testing = rospy.get_param('testing')
                 if testing:
+                    data = [t, -999, -999, -999, -999]
+                begin = rospy.get_param('begin')
+                if not begin:
                     data = [t, -999, -999, -999, -999]
                 writer.writerow(data)  
                 r.sleep()

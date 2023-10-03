@@ -137,7 +137,7 @@ int main(int argc, char* argv[])
 	// 											 {F4_J0_Position_pub, F4_J1_Position_pub, F4_J2_Position_pub, F4_J3_Position_pub} };
 	
 	listener list;
-    ros::Subscriber Contact_sub = n.subscribe<std_msgs::Float32MultiArray>("/FingerContacts", 1, &listener::Contacts_Callback, &list);
+    ros::Subscriber Contact_sub = n.subscribe<std_msgs::Float32MultiArray>("/Delayed_FingerContacts", 1, &listener::Contacts_Callback, &list);
 	
 	// API can set vibration and forces at 200Hz at steps from 0-100
 	int rate_hz = 200;
@@ -322,9 +322,9 @@ int main(int argc, char* argv[])
 		// And Deserialize it back into a useable profile
 		SGCore::HandProfile loadedProfile = SGCore::HandProfile::Deserialize(serializedProfile);
 		
-		std::cout<<"Ready to go. Press Return to continue."<<std::endl;
-		c = getchar();
-		std::cout<<"Glove control started."<<std::endl;
+
+
+		
 		}
 
 		
@@ -344,12 +344,24 @@ int main(int argc, char* argv[])
 			//std::vector<std::vector<SGCore::Kinematics::Vect3D>> flat_hand_angles=SGCore::Kinematics::Anatomy.HandAngles_Flat(rightHand);
 			
 			SGCore::Kinematics::Vect3D thumb_pointer_vector;
+			SGCore::Kinematics::Vect3D thumb;
+			SGCore::Kinematics::Vect3D finger;
 			double thumb_pointer_distance;
 			double thumb_pointer_distance_last;
 			double thumb_pointer_velocity;		
 			bool first_loop = true;
 			bool publish_v = false;
 			int count = 0;
+			
+			std::cout<<"Make an L shape with your thumb and pointer.  Press Return to continue."<<std::endl;
+			c = getchar();
+			if (glove->GetHandPose(cachedProfile, handPose)) //returns the HandPose based on the latest device data, using the latest Profile and the default HandGeometry
+			{			
+				thumb_pointer_vector = handPose.jointPositions[1][3] - handPose.jointPositions[0][3];
+				thumb_pointer_distance = abs(pow( (pow(thumb_pointer_vector.x, 2) + pow(thumb_pointer_vector.y,2) + pow(thumb_pointer_vector.z,2)), 0.5));
+				ros::param::set("/TP_MAX", thumb_pointer_distance);
+				std::cout<<"Glove control started."<<std::endl;
+			}
 
 			while (ros::ok())
 			{
@@ -361,7 +373,7 @@ int main(int argc, char* argv[])
 					for (int f = 0; f < 5; f++) //finger (f), [0..4].
 					{
 						for (int j = 0; j < 4; j++) //Joint Index; proximal to distal, where 4 = fingerTip.
-						{		
+						{	
 							// Publish positions of each joint
 							// position of the hand joints in 3D space, in millimeters, relative to the wrist (0, 0, 0). 
 							// JointPositions is a 5x4 array of Vectors
@@ -398,9 +410,20 @@ int main(int argc, char* argv[])
 
 					// Publish Thumb-Pointer distance
 					thumb_pointer_vector = handPose.jointPositions[1][3] - handPose.jointPositions[0][3];
+					
+					thumb_pointer_distance = abs(pow( (pow(thumb_pointer_vector.x, 2) + pow(thumb_pointer_vector.y,2) + pow(thumb_pointer_vector.z,2)), 0.5));
+					
+					double thumb_d = pow(pow(handPose.jointPositions[0][3].x,2)+pow(handPose.jointPositions[0][3].y,2)+pow(handPose.jointPositions[0][3].z,2),0.5); 
+					double finger_d = pow(pow(handPose.jointPositions[1][3].x,2)+pow(handPose.jointPositions[1][3].y,2)+pow(handPose.jointPositions[1][3].z,2),0.5);
+					double dot = handPose.jointPositions[1][3].x*handPose.jointPositions[0][3].x + handPose.jointPositions[1][3].y*handPose.jointPositions[0][3].y + handPose.jointPositions[1][3].z*handPose.jointPositions[0][3].z;
+					double a_cosine = dot/(thumb_d*finger_d);
+					double c = pow(thumb_d*thumb_d + finger_d*finger_d - 2*finger_d*thumb_d*a_cosine, 0.5);
+					//std::cout<< c <<", "<< thumb_pointer_distance<<std::endl;
+
+
+
 
 					//std::cout<< (handPose.jointPositions[1][3].x) - (handPose.jointPositions[0][3].x) << std::endl;
-					thumb_pointer_distance = abs(40-pow( (pow(thumb_pointer_vector.x, 2) + pow(thumb_pointer_vector.y,2) + pow(thumb_pointer_vector.z,2)), 0.5));
 					if (first_loop){thumb_pointer_distance_last = thumb_pointer_distance;}
 					
 					if (publish_v)

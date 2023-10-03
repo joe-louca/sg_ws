@@ -15,13 +15,15 @@ def gripper_cmd_callback(msg):
 def publisher():
     global gripper_cmd
     global cmd_ready
-    gripper_max = 50
+    
     
     rospy.init_node('Robotiq2FGripperSimpleController')    
     pub = rospy.Publisher('Robotiq2FGripperRobotOutput', outputMsg.Robotiq2FGripper_robot_output, queue_size=1)
     sub = rospy.Subscriber('/Delayed_TPDistance', Float32, gripper_cmd_callback)
     rate_hz = 100
-    
+
+    gripper_max = 40
+    gripper_max = rospy.get_param('/TP_MAX')
     #rate_hz = rospy.get_param('rate_hz')
     
     command = outputMsg.Robotiq2FGripper_robot_output();
@@ -71,12 +73,13 @@ def publisher():
                         
                         # build command msg
                         if gripper_smoothed > gripper_max:
+                            gripper_smoothed = gripper_max
                             gripper_pos = 0 # open
                         elif gripper_smoothed < 0:
+                            gripper_smoothed = 0
                             gripper_pos = 255 # closed
-                        else:
-                            gripper_pos = 255+int(-255/gripper_max*gripper_smoothed)
-                        
+                        gripper_pos = 255+int(-255*gripper_smoothed/gripper_max)
+                        print([gripper_smoothed, gripper_pos])
                         if (gripper_pos == last_pos+1) or (gripper_pos == last_pos-1):
                             gripper_pos = last_pos
                         
@@ -84,7 +87,7 @@ def publisher():
                         command.rGTO = 1  # go to action
                         command.rATR = 0  # Reset??
                         command.rPR = gripper_pos # 255 open, 0 closed
-                        command.rSP = 50 #150 # max speed
+                        command.rSP = 75 #150 # max speed
                         command.rFR = 200 # max force
                         # publish to gripper        
                         pub.publish(command)

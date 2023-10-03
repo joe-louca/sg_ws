@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- Start up nodes to subscribe and add delay -->	
+	<node pkg="delay" type="topic_delay.py" name="DelayFingerContacts" args="FingerContacts"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayTPDistance" args="TPDistance"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayTPVelocity" args="TPVelocity"/>	
+	<node pkg="delay" type="topic_delay.py" name="DelayFingerJointAngles" args="FingerJointAngles"/>	
+
+	<!--Cameras-->
+	<node pkg="cameras" type="cam1.py" name="Camera"/>	
+	
+</launch>
